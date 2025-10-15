@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Dr Gautam Dendukuri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Universal Box Sizing */
+* {
+    box-sizing: border-box;
+}
+
+        /* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+main {
+    padding: 0;
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 40px 20px;
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 30px;
+    align-items: stretch;
+    margin: 0 auto;
+}
+
+.content-wrapper img {
+    width: 300px;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    align-self: center;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.text-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2E86C1;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #2E86C1;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1f5f8b;
+}
+
+/* Certificates Section */
+.certificates-section {
+    background-color: #f5f7fa;
+    padding: 50px 20px;
+}
+
+.certificates-section h2 {
+    text-align: center;
+    color: #2E86C1;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: contain;
+    display: block;
+    background-color: #f5f7fa;
+}
+
+.certificate-card .certificate-title {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #2E86C1;
+    font-size: 0.95rem;
+}
+
+/* Lightbox for certificate viewing */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #2E86C1;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .text-content p {
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 35px 20px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    section {
+        padding: 25px 15px;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 15px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .content-wrapper img {
+        width: 100%;
+        max-width: 280px;
+        min-height: 280px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        text-align: left;
+        width: 100%;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+        text-align: left;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .cta-button {
+        display: block;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .certificates-section {
+        padding: 30px 15px;
+    }
+
+    .certificates-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .certificate-card img {
+        height: auto;
+        aspect-ratio: 3/4;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- This is where the header will be inserted -->
+    <div id="header-container"></div>
+
+    <!-- Your page content here -->
+    <main>
+        <section id="about">
+            <div class="content-wrapper">
+                <img src="/resources/about.webp" alt="Dr Gautam Dendukuri">
+                <div class="text-content">
+                    <h1>About Dr. Gautam Dendukuri</h1>
+                    <p>Dr Gautam graduated in dental surgery from Dr R Ahmed Dental college, the first dental college of the country. He then pursued higher surgical training in Oral and Maxillofacial surgery in the UK at world-renowned institutes like the Morriston Hospital (Swansea) and Queen Victoria Hospital (England).</p>
+                    <p>He later worked as a registrar and locum Consultant at the Mid Western Regional Hospital, Limerick, Ireland. During this time, he acquired fellowships from the Royal College of Surgeons in England and Ireland.</p>
+                    <p>Currently practicing in Hyderabad at Avis Hospital, Dr Gautam provides services in facial trauma repair, facial deformity correction, head and neck pathology, orthognathic surgery, obstructive sleep apnoea, and dental implant rehabilitation.</p>
+                    <p>He is also associated with LV Prasad Eye Institute, Shroff Eye Institute (Delhi), and AIG Hospital (Hyderabad), working collaboratively on orbital trauma, reconstruction, and sleep apnoea management.</p>
+                    <p>At Avis Hospital, an integrated surgical team including plastic, ENT, neuro, oculoplastic, head and neck surgeons, and interventional radiologists ensures comprehensive care. Through the "Hope, Head and Neck Foundation", the hospital also offers subsidized treatment for underprivileged patients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="certificates-section">
+            <h2>Certifications & Achievements</h2>
+            <div class="certificates-grid">
+                
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/ireland fellowship.jpg')">
+                    <img src="./resources/Certificates/ireland fellowship.jpg" alt="Ireland Fellowship">
+                    <div class="certificate-title">Fellowship - Royal College of Surgeons (Ireland)</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/OMFS MEMBERSHIP.jpg')">
+                    <img src="./resources/Certificates/OMFS MEMBERSHIP.jpg" alt="OMFS Membership">
+                    <div class="certificate-title">OMFS Membership</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/ORTHOGNATHIC COURSE QVH.jpg')">
+                    <img src="./resources/Certificates/ORTHOGNATHIC COURSE QVH.jpg" alt="Orthognathic Course">
+                    <div class="certificate-title">Orthognathic Surgery Course - QVH</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/AESTHETIC COURSE QVH.jpg')">
+                    <img src="./resources/Certificates/AESTHETIC COURSE QVH.jpg" alt="Aesthetic Course">
+                    <div class="certificate-title">Aesthetic Course - QVH</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/MICROVASCULAR COURSE.jpg')">
+                    <img src="./resources/Certificates/MICROVASCULAR COURSE.jpg" alt="Microvascular Course">
+                    <div class="certificate-title">Microvascular Surgery Course</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/SKULL BASE COURSE BANGALORE.jpg')">
+                    <img src="./resources/Certificates/SKULL BASE COURSE BANGALORE.jpg" alt="Skull Base Course">
+                    <div class="certificate-title">Skull Base Surgery Course - Bangalore</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/OMFS CONFERENCE FACULTY DELHI.jpg')">
+                    <img src="./resources/Certificates/OMFS CONFERENCE FACULTY DELHI.jpg" alt="OMFS Conference Faculty">
+                    <div class="certificate-title">OMFS Conference Faculty - Delhi</div>
+                </div>
+                <div class="certificate-card" onclick="openLightbox('/resources/certificates/GUEST LECTURE OCULOPLASTY MUMBAI.jpg')">
+                    <img src="./resources/Certificates/GUEST LECTURE OCULOPLASTY MUMBAI.jpg" alt="Guest Lecture">
+                    <div class="certificate-title">Guest Lecture - Oculoplasty, Mumbai</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox for viewing certificates -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to include header and footer -->
+    <script>
+        fetch("header.html")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Header failed to load");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+                // Bind hamburger toggle after header is injected
+                const toggleBtn = document.getElementById('menuToggle');
+                const navLinks = document.getElementById('navLinks');
+                if (toggleBtn && navLinks) {
+                    toggleBtn.addEventListener('click', () => {
+                        navLinks.classList.toggle('show');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error loading header:", error);
+            });
+
+        // Load footer
+        fetch("footer.html")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Footer failed to load");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Error loading footer:", error);
+            });
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>

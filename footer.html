@@ -1,0 +1,164 @@
+<style>
+  footer {
+    background-color: #2E86C1;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-section h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-icon {
+    font-size: 1.5rem;
+    display: inline-block;
+  }
+
+  .footer-section p {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 20px 15px;
+    }
+
+    .footer-section {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-section:last-child {
+      border-bottom: none;
+    }
+
+    .footer-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      justify-content: center;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .footer-icon {
+      font-size: 1.8rem;
+    }
+
+    .footer-section p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-section a {
+      font-size: 0.9rem;
+      margin: 2px 0;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom p {
+      margin: 3px 0;
+    }
+  }
+</style>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>
+        <span class="footer-icon">👨‍⚕️</span>
+        <span>Dr. Gautam Dendukuri</span>
+      </h3>
+      <p>Oral & Maxillofacial Surgeon</p>
+      <p>FRCS (England) | FRCS (Ireland)</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>
+        <span class="footer-icon">📍</span>
+        <span>Hospital Address</span>
+      </h3>
+      <p><strong>Avis Hospital</strong></p>
+      <p>Road No. 10, Banjara Hills, Hyderabad</p>
+      <p>Telangana 500034, India</p>
+      <p><strong>📞 Phone:</strong> +91 XXX XXX XXXX</p>
+      <p><strong>✉️ Email:</strong> info@drgautamdendukuri.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>
+        <span class="footer-icon">🔗</span>
+        <span>Quick Links</span>
+      </h3>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">ℹ️ About</a>
+      <a href="services.html">⚕️ Services</a>
+      <a href="facility.html">🏥 Facility</a>
+      <a href="appointment.html">📅 Book Appointment</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>
+        <span class="footer-icon">🕐</span>
+        <span>Clinic Hours</span>
+      </h3>
+      <p><strong>Monday - Saturday:</strong></p>
+      <p>9:00 AM - 6:00 PM</p>
+      <p><strong>Sunday:</strong></p>
+      <p>Closed</p>
+      <p style="margin-top: 15px;"><em>⚡ Emergency cases available 24/7</em></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Dr. Gautam Dendukuri - Oral & Maxillofacial Surgeon</p>
+    <p>All Rights Reserved</p>
+  </div>
+</footer>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility - Dr Gautam Dendukuri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- This is where the header will be inserted -->
+    <div id="header-container"></div>
+
+    <!-- Your page content here -->
+    <main>
+        <h1>Page Content Goes Here</h1>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to include header and footer -->
+    <script>
+        fetch("header.html")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Header failed to load");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+                // Bind hamburger toggle after header is injected
+                const toggleBtn = document.getElementById('menuToggle');
+                const navLinks = document.getElementById('navLinks');
+                if (toggleBtn && navLinks) {
+                    toggleBtn.addEventListener('click', () => {
+                        navLinks.classList.toggle('show');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error loading header:", error);
+            });
+
+        // Load footer
+        fetch("footer.html")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Footer failed to load");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch(error => {
+                console.error("Error loading footer:", error);
+            });
+    </script>
+
+</body>
+</html>
