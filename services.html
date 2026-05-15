@@ -1,617 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services - Dr Gautam Dendukuri</title>
-    <link rel="stylesheet" href="styles.css">
+
     <style>
-        /* Universal Box Sizing */
-* {
-    box-sizing: border-box;
-}
+        /* ---------- Global Reset ---------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* Base Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
-    overflow-x: hidden;
-    width: 100%;
-}
+        /* ---------- Base Styles ---------- */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            /* Full black background */
+            color: #fff;
+            /* White text */
+            overflow-x: hidden;
+            width: 100%;
+            line-height: 1.7;
+        }
 
-main {
-    padding: 0;
-    display: block;
-    width: 100%;
-    overflow-x: hidden;
-}
+        main {
+            width: 100%;
+        }
 
-.page-header {
-    background: linear-gradient(135deg, #2E86C1 0%, #1f5f8b 100%);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
+        /* ---------- Page Header ---------- */
+        .page-header {
+            background: linear-gradient(135deg, #0a3d62, #1f5f8b);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-.page-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
+        .page-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
 
-.page-header p {
-    margin: 15px 0 0;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
+        .page-header p {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
 
-.services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-}
+        /* ---------- Content Wrapper ---------- */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #111;
+            /* Dark card background */
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        }
 
-.service-category {
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        /* ---------- Service Sections ---------- */
+        .service-section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #222;
+        }
 
-.category-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .service-section:last-child {
+            border-bottom: none;
+        }
 
-.category-header h2 {
-    color: #2E86C1;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
+        .service-section h2 {
+            color: #00B4D8;
+            /* Accent blue */
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
 
-.category-header p {
-    color: #666;
-    font-size: 1rem;
-}
+        .service-section p {
+            color: #ddd;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-}
+        /* ---------- Lists ---------- */
+        .service-list {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+        }
 
-/* Special grid for 2-item sections */
-.gallery-grid-two {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-}
+        .service-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
 
-.gallery-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    width: 100%;
-    max-width: 350px;
-}
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00B4D8;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
 
-.gallery-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
+        /* ---------- Highlight Box ---------- */
+        .service-highlight {
+            background-color: #0a3d62;
+            border-left: 4px solid #00B4D8;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
 
-.gallery-item .item-title {
-    padding: 15px;
-    text-align: center;
-    font-weight: 600;
-    color: #2E86C1;
-    font-size: 0.95rem;
-}
+        .service-highlight p {
+            margin: 0;
+            color: #fff;
+        }
 
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
+        /* ---------- Gallery ---------- */
+        .gallery-grid-two {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
 
-.lightbox.active {
-    display: flex;
-}
+        .gallery-item {
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+        }
 
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
 
-.lightbox-close:hover {
-    color: #2E86C1;
-}
+        .item-title {
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            color: #00B4D8;
+            background-color: #000;
+        }
 
-/* Services Content Section */
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto 60px;
-    padding: 40px 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+        /* ---------- Lightbox ---------- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
 
-.service-section {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 2px solid #f0f0f0;
-}
+        .lightbox.active {
+            display: flex;
+        }
 
-.service-section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
 
-.service-section h2 {
-    color: #2E86C1;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
 
-.service-section p {
-    line-height: 1.8;
-    margin-bottom: 15px;
-    color: #333;
-    text-align: left;
-}
+        .lightbox-close:hover {
+            color: #00B4D8;
+        }
 
-.service-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 20px 0;
-}
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 40px 15px;
+            }
 
-.service-list li {
-    padding: 10px 0 10px 30px;
-    position: relative;
-    line-height: 1.6;
-    color: #555;
-}
+            .page-header h1 {
+                font-size: 1.9rem;
+            }
 
-.service-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #2E86C1;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+            .page-header p {
+                font-size: 1rem;
+            }
 
-.service-highlight {
-    background-color: #f0f8ff;
-    border-left: 4px solid #2E86C1;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
+            .content-wrapper {
+                padding: 25px 15px;
+            }
 
-.service-highlight p {
-    margin: 0;
-    color: #1f5f8b;
-    font-weight: 500;
-}
+            .service-section h2 {
+                font-size: 1.4rem;
+            }
 
-/* Mobile View */
-@media (max-width: 768px) {
-    .page-header {
-        padding: 40px 15px;
-    }
+            .service-section p {
+                font-size: 0.95rem;
+            }
 
-    .page-header h1 {
-        font-size: 1.8rem;
-    }
+            .gallery-item img {
+                height: 360px;
+            }
 
-    .page-header p {
-        font-size: 1rem;
-    }
+            .lightbox-close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
 
-    .content-wrapper {
-        padding: 25px 15px;
-        margin-bottom: 40px;
-    }
+        header {
+            background-color: #2E86C1;
+            color: white;
+            padding: 20px;
+        }
 
-    .service-section {
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .service-section h2 {
-        font-size: 1.4rem;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-    .service-section p {
-        font-size: 0.95rem;
-    }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
 
-    .service-list li {
-        font-size: 0.9rem;
-        padding: 8px 0 8px 25px;
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
 
-    .service-highlight {
-        padding: 15px;
-    }
+        .nav-links li {
+            display: inline;
+        }
 
-    .services-container {
-        padding: 30px 15px;
-    }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 8px 0;
+        }
 
-    .category-header h2 {
-        font-size: 1.5rem;
-    }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+        /* Mobile: keep logo and hamburger side by side, stack menu below */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-    .gallery-item img {
-        height: 200px;
-    }
+            .menu-toggle {
+                display: block;
+            }
 
-    .lightbox-close {
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-    }
-}
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                max-height: 0;
+                background-color: #2E86C1;
+                order: 3;
+                align-items: center;
+            }
+
+            .nav-links.show {
+                max-height: 500px;
+                /* enough to show all menu items */
+            }
+
+            .nav-links li {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        footer {
+            background-color: #2E86C1;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* removed icon styles */
+
+        .footer-section p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            footer {
+                padding: 20px 15px;
+            }
+
+            .footer-section {
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .footer-section:last-child {
+                border-bottom: none;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            /* removed icon styles */
+
+            .footer-section p {
+                margin: 4px 0;
+                font-size: 0.9rem;
+            }
+
+            .footer-section a {
+                font-size: 0.9rem;
+                margin: 2px 0;
+            }
+
+            .footer-bottom {
+                margin-top: 20px;
+                padding-top: 15px;
+                font-size: 0.85rem;
+            }
+
+            .footer-bottom p {
+                margin: 3px 0;
+            }
+        }
+
+        .gallery-section {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-heading {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2E86C1;
+            /* or #00B4D8 for dark theme */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0D5174;
+            margin-bottom: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-card {
+            background-color: #000;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .image-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .caption {
+            color: #fff;
+            margin-top: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .image-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .deformity-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .deformity-card {
+            width: 45%;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0D5174;
+            margin-bottom: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-card {
+            background-color: #000;
+            border-radius: 10px;
+            padding: 10px;
+            width: 220px;
+        }
+
+        .image-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .caption {
+            color: #fff;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .deformity-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .deformity-card {
+                width: 90%;
+            }
+        }
     </style>
+
 </head>
+
 <body>
 
-    <!-- This is where the header will be inserted -->
-    <div id="header-container"></div>
 
-    <!-- Your page content here -->
+
+
+
     <main>
+        <header style="background-color: #2E86C1; padding-right: 30px; padding-top: 10px;">
+            <nav>
+                <div class="logo">Dr Gautam Dendukuri</div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="facility.html">Facility</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="appointment.html">Appointment</a></li>
+                </ul>
+            </nav>
+        </header>
         <div class="page-header">
             <h1>Our Services & Gallery</h1>
             <p>Comprehensive Oral & Maxillofacial Surgery Services</p>
         </div>
 
         <div class="content-wrapper">
+            <!-- Facial Trauma -->
             <div class="service-section">
                 <h2>FACIAL TRAUMA AND DEFORMITIES</h2>
-                <p>If you have been an unfortunate victim of facial trauma as a result of an accident there is no need to feel helpless. At Avis hospital, the maxillofacial team led by Dr Gautam specialize in the correction of all these facial deformities.</p>
-                
-                <p>If you have any of the following problems following an accident our team will be more than happy to offer appropriate advice:</p>
-                
+                <p>
+                    If you have been an unfortunate victim of facial trauma as a result of an accident there is no need
+                    to feel helpless. At Avis Hospital, the maxillofacial team led by Dr Gautam specialises in the
+                    correction of all facial deformities.
+                </p>
+                <p>
+                    If you have any of the following problems following an accident, our team will be happy to help:
+                </p>
                 <ul class="service-list">
                     <li>Inability to bite or chew due to derangement of teeth alignment</li>
                     <li>Asymmetry of the face following trauma</li>
                     <li>Sunken eye appearance</li>
                     <li>Double vision</li>
-                    <li>Flattening of the cheek bone area</li>
+                    <li>Flattening of the cheekbone area</li>
                     <li>Depression or deformity in the forehead area</li>
                 </ul>
-                
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>Frontal (forehead) deformity</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/fd-1 (2).jpeg" alt="Before image">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/fd-1 (1).jpeg" alt="After image">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Set -->
+                    <!-- <div class="deformity-card">
+                        <h2>Frontal (forehead) deformity</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/fd-1 (2).jpeg" alt="Before image">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/fd-1 (1).jpeg" alt="After image">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+
                 <div class="service-highlight">
-                    <p>Although patients following accidents should have immediate surgery, sometimes they may present late (secondary deformity) which also can be treated with proper planning and surgery. We also specialize in custom made, 3D printed and specially fabricated prosthesis for such secondary deformities.</p>
+                    <p>Even delayed (secondary) deformities can be treated successfully using 3D-printed custom
+                        prostheses and surgical planning.</p>
                 </div>
             </div>
-            
+
+            <!-- Orthognathic -->
             <div class="service-section">
                 <h2>ORTHOGNATHIC AND COSMETIC SURGERY</h2>
-                <p>Do you feel your jaws are not in alignment? Are your jaws very prominent or very retrusive? Do you want your chin to be more prominent? All these problems can be addressed with a proper assessment, xrays and corrective surgery. Improve your confidence and self esteem with cosmetic orthognathic surgery.</p>
-                
-                <p>At Avis hospital we also offer other cosmetic procedures like:</p>
-                
+                <p>
+                    Jaw misalignment, facial imbalance, or an under- or over-projected chin can be corrected through
+                    orthognathic and cosmetic surgery to improve facial harmony and confidence.
+                </p>
+                <p>We also perform:</p>
                 <ul class="service-list">
                     <li>Rhinoplasty (nose correction)</li>
                     <li>Blepharoplasty</li>
-                    <li>Face lift for facial rejuvenation</li>
+                    <li>Facelift for facial rejuvenation</li>
                 </ul>
+
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>Deficient Lower Jaw</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG_6109.webp" alt="Before image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG_0729.webp" alt="After image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Set -->
+                    <div class="deformity-card">
+                        <h2>Prominent upper and lower jaw</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/img-11 (2).jpeg" alt="Before image"
+                                    style="height: 280px; width: 240px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/img-11 (1).jpeg" alt="After image"
+                                    style="height: 280px; width: 260px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>Deficient Chin</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-15.jpeg" alt="Before image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-14.jpeg" alt="After image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Set -->
+                    <div class="deformity-card">
+                        <h2>BiJaw Correction</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-13.jpeg" alt="Before image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-12.jpeg" alt="After image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            
+
+            <!-- Sleep Apnoea -->
             <div class="service-section">
                 <h2>OBSTRUCTIVE SLEEP APNOEA</h2>
-                <p>Do you have a problem with snoring? Do you have disturbed or inadequate sleep leading to tiredness during the day and unable to focus on work? You could be having obstructive sleep apnoea.</p>
-                
-                <p>At Avis hospital we work in coordination with the ENT surgeons to provide a comprehensive treatment plan for sleep apnoea. This ranges from appliances that relieve apnoea to surgical procedures like:</p>
-                
+                <p>
+                    Snoring and interrupted sleep may indicate obstructive sleep apnoea. At Avis Hospital, we coordinate
+                    with ENT surgeons to deliver tailored treatments including appliances and advanced jaw-advancement
+                    procedures.
+                </p>
                 <ul class="service-list">
-                    <li>Widening the upper jaw for better airway competence</li>
-                    <li>Advancement of the jaws which is considered a gold standard in the treatment of obstructive sleep apnoea</li>
+                    <li>Upper jaw expansion for airway improvement</li>
+                    <li>Jaw advancement surgery (gold standard treatment)</li>
                 </ul>
+
+                <!-- <div class="gallery-grid-two">
+                    <div class="gallery-item" onclick="openLightbox('./resources/assets/IMG_1911.webp')">
+                        <img src="./resources/assets/IMG_1911.webp" alt="Before">
+                        <div class="item-title">Before</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('./resources/assets/IMG_1913.webp')">
+                        <img src="./resources/assets/IMG_1913.webp" alt="After">
+                        <div class="item-title">After</div>
+                    </div>
+                </div> -->
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>Jaw Advancement Of Sleep Apnoea</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-18.jpeg" alt="Before image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG-17.jpeg" alt="After image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Set -->
+                    <div class="deformity-card">
+                        <h2>Jaw Advancement Of Sleep Apnoea</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG_1911.webp" alt="Before image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">Before</p>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/IMG_1913.webp" alt="After image" style="height: 280px;">
+                                <p class="caption" style="text-align: center;">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            
+
+            <!-- Head & Neck -->
             <div class="service-section">
                 <h2>HEAD AND NECK PATHOLOGY</h2>
-                <p>Have you been diagnosed with a cyst or tumour in your jaws or any part of the mouth? This will need treatment from experts who are experienced in not only removal of the lesion but also reconstructive surgery to restore form and function.</p>
-                
+                <p>
+                    Have you been diagnosed with a cyst or tumour in your jaws or mouth? Treatment here combines expert
+                    lesion removal with reconstructive surgery for optimal restoration of form and function.
+                </p>
                 <div class="service-highlight">
-                    <p>At Avis hospital it is possible to get this kind of comprehensive treatment in safe hands with state of art equipment all under one roof!!</p>
+                    <p>At Avis Hospital, comprehensive head-and-neck management is delivered under one roof using
+                        cutting-edge equipment and surgical expertise.</p>
                 </div>
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>PATHOLOGY</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/sample16.jpeg" alt="Before image" style="height: 280px;">
+
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/sample11.jpeg" alt="After image"
+                                    style="height: 280px; width: 240px;">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Set -->
+                    <div class="deformity-card">
+
+                        <div class="image-row" style="margin-top: 70px;">
+                            <div class="image-card">
+                                <img src="./resources/assets/sample12.jpeg" alt="Before image" style="height: 280px;">
+
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/sample15.jpeg" alt="After image" style="height: 280px;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deformity-card">
+
+                        <div class="image-row" style="margin-top: 70px;">
+                            <div class="image-card">
+                                <img src="./resources/assets/sample13.jpeg" alt="Before image"
+                                    style="height: 280px; width: 260px;">
+
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/sample14.jpeg" alt="After image"
+                                    style="height: 280px; width: 220px; ">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
             </div>
-            
+
+            <!-- Full Mouth -->
             <div class="service-section">
                 <h2>FULL MOUTH REHABILITATION</h2>
-                <p>Do you have missing teeth or using removable dentures as a replacement for lost teeth? You can now say goodbye to those dentures and have a full set of fixed teeth with the help of Implants.</p>
-                
-                <p>This can now be performed with precision using prefabricated digitally planned stents and minimally invasive surgery. Our prosthodontist will then fabricate the fixed prosthesis which a permanent solution to missing teeth. No more removing dentures and Happy chewing!!</p>
-            </div>
-        </div>
+                <p>
+                    Missing teeth can now be permanently replaced using dental implants. With digital planning and
+                    minimally invasive techniques, we ensure precision and comfort for every patient.
+                </p>
+                <p>No more removable dentures — enjoy confident, natural chewing again!</p>
+                <div class="deformity-row">
 
-        <div class="services-container">
-            <!-- 1. Facial Trauma & Deformities Gallery -->
-            <div class="service-category">
-                <div class="category-header">
-                    <h2>Facial Trauma & Reconstructions Gallery</h2>
-                    <p>Complex surgical procedures and reconstructive work</p>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('/resources/Cutler beard wm.jpg.opt779x519o0,0s779x519.jpg')">
-                        <img src="/resources/Cutler beard wm.jpg.opt779x519o0,0s779x519.jpg" alt="Cutler beard">
-                        <div class="item-title">Cutler Beard Procedure</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Midline forehead wm.jpg.opt775x357o0,0s775x357.jpg')">
-                        <img src="/resources/Midline forehead wm.jpg.opt775x357o0,0s775x357.jpg" alt="Midline forehead">
-                        <div class="item-title">Midline Forehead Reconstruction</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/N120391 wm.jpg.opt646x718o0,0s646x718.jpg')">
-                        <img src="/resources/N120391 wm.jpg.opt646x718o0,0s646x718.jpg" alt="Case N120391">
-                        <div class="item-title">Surgical Case N120391</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/N224866 wm.jpg.opt649x432o0,0s649x432.jpg')">
-                        <img src="/resources/N224866 wm.jpg.opt649x432o0,0s649x432.jpg" alt="Case N224866">
-                        <div class="item-title">Surgical Case N224866</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/N235593 wm.jpg.opt902x601o0,0s902x601.jpg')">
-                        <img src="/resources/N235593 wm.jpg.opt902x601o0,0s902x601.jpg" alt="Case N235593">
-                        <div class="item-title">Surgical Case N235593</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/N240765 wm.jpg.opt902x450o0,0s902x450.jpg')">
-                        <img src="/resources/N240765 wm.jpg.opt902x450o0,0s902x450.jpg" alt="Case N240765">
-                        <div class="item-title">Surgical Case N240765</div>
-                    </div>
-                </div>
-            </div>
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>FULL MOUTH REHABILITATION</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/pic-full.png" alt="Before image" style="height: 150px;">
 
-            <!-- 2. Orthognathic & Cosmetic Surgery Gallery -->
-            <div class="service-category">
-                <div class="category-header">
-                    <h2>Cosmetic Procedures Gallery</h2>
-                    <p>Brow lift, blepharoplasty, and aesthetic treatments</p>
-                </div>
-                <div class="gallery-grid-two">
-                    <div class="gallery-item" onclick="openLightbox('/resources/Brow banner 1.jpg.opt192x128o0,0s192x128.jpg')">
-                        <img src="/resources/Brow banner 1.jpg.opt192x128o0,0s192x128.jpg" alt="Brow lift">
-                        <div class="item-title">Brow Lift Procedure</div>
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/full-2.png" alt="After image"
+                                    style="height: 150px; width: 240px;">
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Double eyelid 1.jpg')">
-                        <img src="/resources/Double eyelid 1.jpg" alt="Double eyelid">
-                        <div class="item-title">Double Eyelid Surgery</div>
+
+                    <!-- Second Set -->
+                    <div class="deformity-card">
+
+                        <div class="image-row" style="margin-top: 70px;">
+                            <div class="image-card">
+                                <img src="./resources/assets/full-3.png" alt="Before image" style="height: 150px;">
+
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/full-4.png" alt="After image" style="height: 200px;">
+
+                            </div>
+                        </div>
                     </div>
+
+
+
                 </div>
             </div>
 
-            <!-- 3. Sleep Apnoea Gallery (Ptosis) -->
-            <div class="service-category">
-                <div class="category-header">
-                    <h2>Ptosis Treatment Gallery</h2>
-                    <p>Eyelid drooping correction and surgical procedures</p>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('/resources/Ptosis in a child.jpg')">
-                        <img src="/resources/Ptosis in a child.jpg" alt="Ptosis in a child">
-                        <div class="item-title">Ptosis in a Child</div>
+
+            <div class="service-section">
+                <h2>Syndrome</h2>
+                <p>
+                    For Children born with birth defects including Syndromes,it is possible to rehabilitate then
+                    aesthetically and functionally by way of Skeletal Surgery.</p>
+
+                <p>
+                    At Avis Hospitals, we have performed such surgeries for many patients successfully.</p>
+
+                <div class="deformity-row">
+
+                    <!-- First Set -->
+                    <div class="deformity-card">
+                        <h2>Syndrome</h2>
+                        <div class="image-row">
+                            <div class="image-card">
+                                <img src="./resources/assets/syd-1 (2).jpeg" alt="After image"
+                                    style="height: 280px; width: 240px;">
+
+                            </div>
+                            <div class="image-card">
+                                <img src="./resources/assets/syd-1 (1).jpeg" alt="Before image" style="height: 280px;">
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Ptosis measurements.jpg')">
-                        <img src="/resources/Ptosis measurements.jpg" alt="Ptosis measurements">
-                        <div class="item-title">Ptosis Measurements</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Ptosis yola banner.jpg.opt192x127o0,0s192x127.jpg')">
-                        <img src="/resources/Ptosis yola banner.jpg.opt192x127o0,0s192x127.jpg" alt="Ptosis banner">
-                        <div class="item-title">Ptosis Overview</div>
-                    </div>
+
+
+
+
+
                 </div>
             </div>
 
-            <!-- 4. Head & Neck Pathology + 5. Full Mouth Rehabilitation Gallery -->
-            <div class="service-category">
-                <div class="category-header">
-                    <h2>Patient Cases & Results</h2>
-                    <p>Before and after surgical outcomes</p>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox('/resources/P488791 wm.jpg.opt622x414o0,0s622x414.jpg')">
-                        <img src="/resources/P488791 wm.jpg.opt622x414o0,0s622x414.jpg" alt="Case P488791">
-                        <div class="item-title">Patient Case P488791</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P504255 wm.jpg.opt780x519o0,0s780x519.jpg')">
-                        <img src="/resources/P504255 wm.jpg.opt780x519o0,0s780x519.jpg" alt="Case P504255">
-                        <div class="item-title">Patient Case P504255</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P542932.jpg.opt902x400o0,0s902x400.jpg')">
-                        <img src="/resources/P542932.jpg.opt902x400o0,0s902x400.jpg" alt="Case P542932">
-                        <div class="item-title">Patient Case P542932</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P550310 G.jpg.opt192x127o0,0s192x127.jpg')">
-                        <img src="/resources/P550310 G.jpg.opt192x127o0,0s192x127.jpg" alt="Case P550310">
-                        <div class="item-title">Patient Case P550310</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P614667.jpg.opt902x449o0,0s902x449.jpg')">
-                        <img src="/resources/P614667.jpg.opt902x449o0,0s902x449.jpg" alt="Case P614667">
-                        <div class="item-title">Patient Case P614667</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P688088 wm.jpg.opt902x677o0,0s902x677.jpg')">
-                        <img src="/resources/P688088 wm.jpg.opt902x677o0,0s902x677.jpg" alt="Case P688088">
-                        <div class="item-title">Patient Case P688088</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P695187 wm.jpg.opt902x600o0,0s902x600.jpg')">
-                        <img src="/resources/P695187 wm.jpg.opt902x600o0,0s902x600.jpg" alt="Case P695187">
-                        <div class="item-title">Patient Case P695187</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P714845 wm.jpg.opt620x413o0,0s620x413.jpg')">
-                        <img src="/resources/P714845 wm.jpg.opt620x413o0,0s620x413.jpg" alt="Case P714845">
-                        <div class="item-title">Patient Case P714845</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P729789  wm.jpg.opt775x258o0,0s775x258.jpg')">
-                        <img src="/resources/P729789  wm.jpg.opt775x258o0,0s775x258.jpg" alt="Case P729789">
-                        <div class="item-title">Patient Case P729789</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P761886 G1.jpg.opt230x153o0,0s230x153.jpg')">
-                        <img src="/resources/P761886 G1.jpg.opt230x153o0,0s230x153.jpg" alt="Case P761886">
-                        <div class="item-title">Patient Case P761886</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P775260 composite.jpg.opt787x787o0,0s787x787.jpg')">
-                        <img src="/resources/P775260 composite.jpg.opt787x787o0,0s787x787.jpg" alt="Case P775260">
-                        <div class="item-title">Patient Case P775260</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P790166 wm.jpg.opt902x574o0,0s902x574.jpg')">
-                        <img src="/resources/P790166 wm.jpg.opt902x574o0,0s902x574.jpg" alt="Case P790166">
-                        <div class="item-title">Patient Case P790166</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P906585 B copy.jpg.opt603x201o0,0s603x201.jpg')">
-                        <img src="/resources/P906585 B copy.jpg.opt603x201o0,0s603x201.jpg" alt="Case P906585">
-                        <div class="item-title">Patient Case P906585</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/P934978 Yola prosthesis.jpg.opt678x506o0,0s678x506.jpg')">
-                        <img src="/resources/P934978 Yola prosthesis.jpg.opt678x506o0,0s678x506.jpg" alt="Prosthesis">
-                        <div class="item-title">Yola Prosthesis</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Prosthesis with without implant wm.jpg.opt651x650o0,0s651x650.jpg')">
-                        <img src="/resources/Prosthesis with without implant wm.jpg.opt651x650o0,0s651x650.jpg" alt="Prosthesis comparison">
-                        <div class="item-title">Prosthesis With/Without Implant</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Facility & Profile Section -->
-            <div class="service-category">
-                <div class="category-header">
-                    <h2>Facility & Profile</h2>
-                    <p>Our practice and professional profile</p>
-                </div>
-                <div class="gallery-grid-two">
-                    <div class="gallery-item" onclick="openLightbox('/resources/Right Profile.jpg')">
-                        <img src="/resources/Right Profile.jpg" alt="Right profile">
-                        <div class="item-title">Right Profile</div>
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('/resources/Straight profile.jpg')">
-                        <img src="/resources/Straight profile.jpg" alt="Straight profile">
-                        <div class="item-title">Straight Profile</div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dr. Gautam Dendukuri</h3>
+                <p>Oral And MaxilloFacial Surgeon</p>
 
-    <!-- Lightbox for viewing images -->
+            </div>
+
+            <div class="footer-section">
+                <h3>Hospital Address</h3>
+                <p><strong>Avis Hospital</strong></p>
+                <p>Jublieehills, Hyderabad</p>
+                <p>Telangana 500034, India</p>
+                <p><strong>Phone:</strong> +91 9866208613</p>
+                <p><strong>Email:</strong> drgautamd@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="facility.html">Facility</a>
+                <a href="appointment.html">Book Appointment</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Clinic Hours</h3>
+                <p><strong>Monday - Saturday:</strong></p>
+                <p>9:00 AM - 2:00 PM</p>
+                <p><strong>Sunday:</strong></p>
+                <p>Closed</p>
+                <!-- <p style="margin-top: 15px;"><em>Emergency cases available 24/7</em></p> -->
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dr. Gautam Dendukuri - Oral And MaxilloFacial Surgeon</p>
+            <p>All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <img class="lightbox-content" id="lightbox-img" />
     </div>
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
-    <!-- JavaScript to include header and footer -->
     <script>
-        fetch("header.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Header failed to load");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
-                // Bind hamburger toggle after header is injected
-                const toggleBtn = document.getElementById('menuToggle');
-                const navLinks = document.getElementById('navLinks');
-                if (toggleBtn && navLinks) {
-                    toggleBtn.addEventListener('click', () => {
-                        navLinks.classList.toggle('show');
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error loading header:", error);
-            });
-
-        // Load footer
-        fetch("footer.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Footer failed to load");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("footer-container").innerHTML = data;
-            })
-            .catch(error => {
-                console.error("Error loading footer:", error);
-            });
-
         // Lightbox functions
-        function openLightbox(imageSrc) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = imageSrc;
-            lightbox.classList.add('active');
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
         }
-
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
+            document.getElementById('lightbox').classList.remove('active');
         }
-
-        // Close lightbox on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeLightbox();
-            }
-        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
     </script>
 
 </body>
+
 </html>

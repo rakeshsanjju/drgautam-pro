@@ -1,0 +1,1869 @@
+
+RewriteEngine On
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# -----------------------------------
+# 1. Remove roy1 query (SAFE CLEAN)
+# -----------------------------------
+RewriteCond %{QUERY_STRING} ^roy1 [NC]
+RewriteRule ^ %{REQUEST_URI}? [R=301,L]
+
+# -----------------------------------
+# 2. Specific URL redirects
+# -----------------------------------
+
+RewriteRule ^service/cryo-laser-and-cryo-sclerotherapy/?$ /service/cryo-laser-and-cryo-sclerotherapy [L]
+RewriteCond %{REQUEST_URI} !^/service/cryo-laser-and-cryo-sclerotherapy/?$
+
+RewriteRule ^tag/thyroid-nodules-lasertreatment/?$ / [R=301,L]
+RewriteRule ^tag/comparison-of-three-vein-treatments/?$ / [R=301,L]
+RewriteRule ^what-happens-when-varicose-veins-are-left-untreated/?$ / [R=301,L]
+RewriteRule ^tag/treatment-for-knee-pain/?$ / [R=301,L]
+RewriteRule ^tag/restless-legs/?$ / [R=301,L]
+RewriteRule ^tag/knee-surgery/?$ / [R=301,L]
+RewriteRule ^tag/rfa-for-varicose-veins/?$ / [R=301,L]
+RewriteRule ^tag/lifestyle-changes-to-overcome-varicose-veins/?$ / [R=301,L]
+RewriteRule ^tag/stockings/?$ / [R=301,L]
+RewriteRule ^sclerotherapy-for-veins-treatment-details-and-results/?$ / [R=301,L]
+RewriteRule ^tag/women-thyroid-nodules/?$ / [R=301,L]
+RewriteRule ^uterine-fibroid-embolization-2/?$ / [R=301,L]
+RewriteRule ^are-you-a-suitable-candidate-for-uterine-fibroid-embolization/?$ / [R=301,L]
+RewriteRule ^medical-glue-vs-alternate-treatment-options-for-varicose-veins/?$ / [R=301,L]
+RewriteRule ^diseases/contact-us/?$ / [R=301,L]
+RewriteRule ^diabetes-and-peripheral-arterial-diseasepad/?$ / [R=301,L]
+RewriteRule ^tag/diabetes-diseases/?$ / [R=301,L]
+RewriteRule ^portfolio/childrens-heart-surgery/?$ / [R=301,L]
+RewriteRule ^tag/treatment-for-thyroid/?$ / [R=301,L]
+RewriteRule ^tag/glue-based-vein-treatment/?$ / [R=301,L]
+RewriteRule ^are-massages-effective-for-varicose-veins/?$ / [R=301,L]
+RewriteRule ^few-facts-about-uterine-fibroids-every-woman-should-know/?$ / [R=301,L]
+RewriteRule ^tag/non-invasive-care/?$ / [R=301,L]
+RewriteRule ^lymphatic-system-lymphedema/?$ / [R=301,L]
+RewriteRule ^common-signs-and-symptoms-of-vein-problems/?$ / [R=301,L]
+RewriteRule ^why-and-when-is-a-vascular-ultrasound-recommended/?$ / [R=301,L]
+RewriteRule ^team-member/dr-abhinav-kesarwani/?$ / [R=301,L]
+RewriteRule ^tag/varicocele/?$ / [R=301,L]
+
+RewriteRule ^fw-service/endovenous-laser-ablation-evla/?$ / [R=301,L]
+RewriteRule ^fw-service/lymphedema/?$ / [R=301,L]
+RewriteRule ^fw-service/leg-ulcer-management/?$ / [R=301,L]
+RewriteRule ^tag/risk-assessment-of-varicose-veins/?$ / [R=301,L]
+# RewriteRule ^service/cryo-laser-and-cryo-sclerotherapy\.html/?$ / [R=301,L]
+
+# FIX .html VERSION ONLY
+RewriteRule ^service/cryo-laser-and-cryo-sclerotherapy\.html/?$ /service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+
+
+
+RewriteRule ^tag/varicose-veins-diet/?$ / [R=301,L]
+RewriteRule ^varicose-veins-dangerous/?$ / [R=301,L]
+RewriteRule ^contact/?$ / [R=301,L]
+RewriteRule ^tag/best-hospital-for-varicose-veins/?$ / [R=301,L]
+RewriteRule ^tag/thyroid-ablation-for-womens-health/?$ / [R=301,L]
+RewriteRule ^tag/varicose-veins-symptoms/?$ / [R=301,L]
+RewriteRule ^tag/non-invasive-treatments/?$ / [R=301,L]
+RewriteRule ^team-member/dr-chandru-reddy/?$ / [R=301,L]
+RewriteRule ^tag/knee-arthritis/?$ / [R=301,L]
+RewriteRule ^tag/pain-free/?$ / [R=301,L]
+RewriteRule ^tag/diseases-for-it-persons/?$ / [R=301,L]
+RewriteRule ^tag/winter-season-diseases/?$ / [R=301,L]
+RewriteRule ^tag/mens-diseases/?$ / [R=301,L]
+RewriteRule ^tag/lymphedema-and-vein-connection/?$ / [R=301,L]
+RewriteRule ^tag/truths-about-gae/?$ / [R=301,L]
+RewriteRule ^tag/diabetes-and-varicose-veins/?$ / [R=301,L]
+RewriteRule ^tag/senior-citizens-diseases/?$ / [R=301,L]
+RewriteRule ^tag/uterine-fibroids-treatment/?$ / [R=301,L]
+RewriteRule ^tag/women-fibroids/?$ / [R=301,L]
+RewriteRule ^tag/venous-diseases/page/2/?$ / [R=301,L]
+RewriteRule ^tag/spider-veins-leads-to-blood-cloths/?$ / [R=301,L]
+RewriteRule ^tag/varicose-veins-for-women/?$ / [R=301,L]
+RewriteRule ^tag/leg-swelling/?$ / [R=301,L]
+RewriteRule ^diseases/service/leg-ulcer-management/?$ / [R=301,L]
+RewriteRule ^tag/varicose-veins/feed/?$ / [R=301,L]
+RewriteRule ^diseases/service/thyroid-nodule-embolization/?$ / [R=301,L]
+RewriteRule ^diseases/service/glue-therapy/?$ / [R=301,L]
+RewriteRule ^diseases/service/lymphedema/?$ / [R=301,L]
+RewriteRule ^branch/Andhra-Pradesh/Visakhapatnam/?$ / [R=301,L]
+RewriteRule ^tag/prostate-conditions/?$ / [R=301,L]
+RewriteRule ^tag/types-of-leg-ulcers/feed/?$ / [R=301,L]
+RewriteRule ^service/Leg-Ulcer-Management/?$ / [R=301,L]
+RewriteRule ^diseases/service/cryo-laser-and-cryo-sclerotherapy/?$ / [R=301,L]
+RewriteRule ^diseases/service/radio-frequency-ablation/?$ / [R=301,L]
+RewriteRule ^tag/varicose-veins-and-heart-diseases/?$ / [R=301,L]
+RewriteRule ^thyroid-treatment/?$ / [R=301,L]
+RewriteRule ^tag/chronic-venous-insufficiency/?$ / [R=301,L]
+RewriteRule ^tag/varicose-eczema-causes/feed/?$ / [R=301,L]
+RewriteRule ^tag/vascular-treatment/feed/?$ / [R=301,L]
+RewriteRule ^tag/early-signs-of-dvt/feed/?$ / [R=301,L]
+RewriteRule ^tag/lymphedema-causes/feed/?$ / [R=301,L]
+RewriteRule ^tag/types-of-leg-ulcers/?$ / [R=301,L]
+RewriteRule ^tag/prostate-artery-embolization-in-india/?$ / [R=301,L]
+RewriteRule ^tag/womens-health/?$ / [R=301,L]
+RewriteRule ^tag/non-invasive-vein-care/?$ / [R=301,L]
+RewriteRule ^tag/thyroid-care-for-wo/?$ / [R=301,L]
+RewriteRule ^tag/fibroid-treatments/?$ / [R=301,L]
+RewriteRule ^tag/genetics-on-vein-health/?$ / [R=301,L]
+RewriteRule ^tag/vascular-diseases-for-women/?$ / [R=301,L]
+RewriteRule ^tag/spider-veins-prevention/?$ / [R=301,L]
+RewriteRule ^tag/prostate-embolization/?$ / [R=301,L]
+RewriteRule ^tag/ar-tech/?$ / [R=301,L]
+RewriteRule ^branch/Telangana/Hyderabad/?$ / [R=301,L]
+RewriteRule ^get-the-exercise-tips-for-limited-mobility/?$ / [R=301,L]
+RewriteRule ^service-category/better-life/?$ / [R=301,L]
+RewriteRule ^service/lymphedema\.html/?$ / [R=301,L]
+RewriteRule ^branch/Andhra/?$ / [R=301,L]
+RewriteRule ^tag/vascular-treatment/?$ / [R=301,L]
+RewriteRule ^tag/early-signs-of-dvt/?$ / [R=301,L]
+RewriteRule ^tag/dvt-while-travel/?$ / [R=301,L]
+RewriteRule ^uterine-fibroids-when-those-benign-but-troublesome-tumors-affect-your-pregnancy/?$ / [R=301,L]
+RewriteRule ^our-doctors/dr-chandrashekar-reddy/?$ / [R=301,L]
+RewriteRule ^tag/blood-cloths-in-veins/?$ / [R=301,L]
+RewriteRule ^tag/women-vascular-problems/?$ / [R=301,L]
+RewriteRule ^tag/lymphatic-system-fails/?$ / [R=301,L]
+RewriteRule ^services/venous-leg-ulcers/?$ / [R=301,L]
+# Custom Redirects
+
+RewriteRule ^diseases/service/thyroid-nodule-embolization/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^diseases/service/glue-therapy/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^diseases/service/lymphedema/?$ https://avisvascularcentre.com/ [R=301,L]
+
+
+
+RewriteRule ^branch/Andhra-Pradesh/Visakhapatnam/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^branch/Telangana/Hyderabad/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^branch/Andhra/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^service/Leg-Ulcer-Management/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^service/lymphedema\.html/?$ https://avisvascularcentre.com/ [R=301,L]
+
+ RewriteRule ^diseases/service/cryo-laser-and-cryo-sclerotherapy/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^diseases/service/radio-frequency-ablation/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^thyroid-treatment/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^get-the-exercise-tips-for-limited-mobility/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^service-category/better-life/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^uterine-fibroids-when-those-benign-but-troublesome-tumors-affect-your-pregnancy/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^our-doctors/dr-chandrashekar-reddy/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^tag/(.*)$ https://avisvascularcentre.com/ [R=301,L]
+
+
+
+
+RewriteRule ^ta/why-do-young-healthy-people-sometimes-get-dvt/?$ /diseases/deep-vein-thrombosys [R=301,L]
+
+RewriteRule ^surprising-facts-about-varicose-veins/?$ /diseases/varicose-veins [R=301,L]
+
+RewriteRule ^tag/blood-clots/?$ /the-connection-between-blood-clots-and-varicose-veins [R=301,L]
+
+RewriteRule ^about-us/?$ /about/ [R=301,L]
+
+RewriteRule ^tag/serena-williams/?$ /serena-williams-and-her-experience-with-pulmonary-embolism-2 [R=301,L]
+
+RewriteRule ^can-varicose-veins-be-treated-painlessly-or-without-anaesthesia/?$ /service/ [R=301,L]
+
+RewriteRule ^dt_services/fibroids/?$ /service/fibroids-treatment [R=301,L]
+
+RewriteRule ^what-are-varicoceles-and-their-link-with-infertility/?$ /diseases/varicocele [R=301,L]
+
+RewriteRule ^thank-you/?$ / [R=301,L]
+
+RewriteRule ^dt_doctors/dr-rajah-v-koppala/?$ /our-doctors/dr-rajah-v-koppala [R=301,L]
+
+RewriteRule ^team/dr-rajah-v-koppala/?$ /our-doctors/dr-rajah-v-koppala [R=301,L]
+
+RewriteRule ^kn-in/how-to-care-for-your-varicose-veins-in-the-winters/?$ /how-to-care-for-your-varicose-veins-in-the-winters [R=301,L]
+
+RewriteRule ^hi/lifestyle-changes-to-overcome-varicose-vein-symptoms/?$ /lifestyle-changes-to-overcome-varicose-vein-symptoms [R=301,L]
+
+RewriteRule ^what-is-a-good-time-to-see-a-vein-specialist/?$ /how-to-choose-the-best-varicose-veins-hospital [R=301,L]
+
+RewriteRule ^bn/how-to-care-for-your-varicose-veins-in-the-winters/?$ /how-to-care-for-your-varicose-veins-in-the-winters [R=301,L]
+
+RewriteRule ^4-dangers-associated-with-varicose-veins/?$ /4-dangers-associated-with-varicose-veins [R=301,L]
+
+RewriteRule ^vein-pain-what-your-legs-are-trying-to-tell-you/?$ / [R=301,L]
+
+RewriteRule ^services/varicose-veins/?$ /service/ [R=301,L]
+
+RewriteRule ^lifestyle-changes-to-overcome-varicose-vein-symptoms/?$ /lifestyle-changes-to-overcome-varicose-vein-symptoms [R=301,L]
+
+RewriteRule ^kn-in/varicose-veins-to-remedy-or-to-treat/?$ /varicose-vein-treatment-options [R=301,L]
+
+RewriteRule ^ts-in/can-a-cream-treat-varicose-veins/?$ /blog-categories/ [R=301,L]
+
+RewriteRule ^thyroid-ablation-treatment/?$ /thyroid-nodules-ablation-why-treatment-matters [R=301,L]
+
+# -----------------------------------
+# 3. Homepage / tag fallback
+# -----------------------------------
+RewriteRule ^tag/varicose-veins/?$ / [R=301,L]
+
+# -----------------------------------
+# 4. Extra redirects (non-roy1 URLs)
+# -----------------------------------
+RewriteRule ^branch/Telangana/Kukatpally/?$ /telangana/hyderabad/kukatpally [R=301,L]
+
+RewriteRule ^tag/men-care/?$ /blog-categories/ [R=301,L]
+
+RewriteRule ^tag/gae-treatment/?$ /unveiling-the-truth-about-gae-treatment [R=301,L]
+
+# -----------------------------------
+# 5. Force non-www
+# -----------------------------------
+RewriteCond %{HTTP_HOST} ^www\.avisvascularcentre\.com$ [NC]
+RewriteRule ^(.*)$ https://avisvascularcentre.com/$1 [R=301,L]
+
+</IfModule>
+# --- put this at the VERY TOP of .htaccess ---
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Skip real files/dirs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Special case: this feed → homepage
+RewriteRule ^ultimate-guide-to-venaseal-glue-treatment-for-varicose-veins/feed/?$ / [R=301,L]
+
+# All other /feed/ → same path without /feed
+RewriteRule ^(.+?)/feed/?$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# -----------------------------------
+# 1. Redirect wrong category to homepage
+# -----------------------------------
+RewriteRule ^category/uncategeriozed/?$ / [R=301,L]
+
+# -----------------------------------
+# 2. Redirect ALL wp-login (with query) to homepage
+# -----------------------------------
+RewriteCond %{REQUEST_URI} ^/wp-login\.php [NC]
+RewriteRule ^ / [R=301,L]
+
+# -----------------------------------
+# 3. Redirect wp-admin direct access to homepage
+# -----------------------------------
+RewriteCond %{REQUEST_URI} ^/wp-admin [NC]
+RewriteRule ^ / [R=301,L]
+
+# -----------------------------------
+# 4. Redirect search URLs to homepage
+# -----------------------------------
+RewriteRule ^search/.*$ / [R=301,L]
+
+</IfModule>
+
+# --- keep your existing WordPress block BELOW this ---
+# BEGIN WordPress
+# (leave as-is)
+# END WordPress
+# ------------------------------------
+# FORCE HTTPS + NON-WWW
+# ------------------------------------
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.avisvascularcentre\.com$ [NC]
+RewriteRule ^(.*)$ https://avisvascularcentre.com/$1 [R=301,L]
+
+# ------------------------------------
+# REMOVE TRAILING SLASH (NON-DIRECTORIES)
+# ------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} .+/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# ------------------------------------
+# REMOVE .html FROM URL (EXTERNAL)
+# ------------------------------------
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?]
+RewriteRule ^ %1 [R=301,L]
+
+# ------------------------------------
+# MAP CLEAN URL TO .html (INTERNAL)
+# ------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# ------------------------------------
+# DIRECTORY INDEX
+# ------------------------------------
+DirectoryIndex index.html
+
+# ------------------------------------
+# DISABLE DIRECTORY LISTING
+# ------------------------------------
+Options -Indexes
+
+# ---------------- TEAM MEMBER → OUR DOCTORS ----------------
+RedirectMatch 301 ^/team-member/dr-prashanth-j-v/?$ https://www.avisvascularcentre.com/our-doctors/dr-prashanth-j-v
+RedirectMatch 301 ^/team-member/dr-rajah-v-koppala/?$ https://www.avisvascularcentre.com/our-doctors/dr-rajah-v-koppala
+RedirectMatch 301 ^/team-member/dr-manimaran-govindaraju/?$ https://www.avisvascularcentre.com/our-doctors/dr-manimaran-govindaraju
+RedirectMatch 301 ^/team-member/dr-chandru-reddy/?$ https://www.avisvascularcentre.com/our-doctors/dr-chandrashekar-reddy
+RedirectMatch 301 ^/team-member/dr-mageswaran-perumal/?$ https://www.avisvascularcentre.com/our-doctors/dr-mageswaran-perumal
+RedirectMatch 301 ^/team-member/dr-sourav-chakraborty/?$ https://www.avisvascularcentre.com/our-doctors/dr-sourav-chakraborty
+RedirectMatch 301 ^/team-member/dr-sourav-chakraborty/?$ https://www.avisvascularcentre.com/our-doctors/dr-sourav-chakraborty
+
+RedirectMatch 301 ^/our-doctors/dr-venkatesh-g/?$ https://www.avisvascularcentre.com/
+
+
+# ---------------- ACHIEVEMENTS / ANNOUNCEMENTS ----------------
+RedirectMatch 301 ^/our-achievements/?$ https://www.avisvascularcentre.com/achievements
+RedirectMatch 301 ^/announcements/medtronic-unite/?$ https://www.avisvascularcentre.com/announcements
+
+
+# ---------------- LOCATION FIX ----------------
+RedirectMatch 301 ^/karnataka/mysuru/?$ https://www.avisvascularcentre.com/karnataka/mysore
+# RedirectMatch 301 ^/telangana/hyderabad/?$ https://www.avisvascularcentre.com/
+
+
+# ---------------- DISEASES FIX ----------------
+RedirectMatch 301 ^/diseases-conditions/?$ https://www.avisvascularcentre.com/diseases/
+RedirectMatch 301 ^/diseases-and-conditions/?$ https://www.avisvascularcentre.com/diseases/
+
+
+
+# Tags
+RedirectMatch 301 ^/tag/hereditary-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-and-genetics/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/genetics-and-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/genetics/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/no-1-varicose-veins-hospital/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-hospital-in-hyderabad/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-causes/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/deep-vein-thrombosis/?$ https://www.avisvascularcentre.com/
+
+# Category
+RedirectMatch 301 ^/category/vascular-diseases/?$ https://www.avisvascularcentre.com/
+
+RedirectMatch 301 ^https://www.avisvascularcentre.com/how-to-care-for-your-varicose-veins-in-the-winters?roy1%2F2023-05-0220685_html?$ https://avisvascularcentre.com/how-to-care-for-your-varicose-veins-in-the-winters
+
+
+# ---------------- SERVICES / PAGES → HOME ----------------
+RedirectMatch 301 ^/service/pain-management/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/service/lymphedema-therapy/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/service/varicose-veins-treatment/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/service/varicocele-treatment/?$ https://www.avisvascularcentre.com/
+
+RedirectMatch 301 ^/service-category/venous-leg-ulcers/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/service-category/monitoring/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/service-category/varicose-veins/?$ https://www.avisvascularcentre.com/
+
+RedirectMatch 301 ^/international-patients/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/faq/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/privacy-policy/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/founder/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/thank-you/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/blog-grid-view/?$ https://www.avisvascularcentre.com/
+
+
+# ---------------- BLOG / TAG / CATEGORY → HOME ----------------
+# RedirectMatch 301 ^/advanced-fibroid-treatment-in-india/?$ https://www.avisvascularcentre.com/
+# RedirectMatch 301 ^/venous-insufficiency-ulcers/?$ https://www.avisvascularcentre.com/
+# RedirectMatch 301 ^/venous-skin-ulcers-symptoms-causes-and-treatment/?$ https://www.avisvascularcentre.com/
+# RedirectMatch 301 ^/varicocele-treatment-vs-surgery/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/varicose-veins-recurrence-causes-solutions/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/restless-leg-syndrome/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/suffering-from-worsening-symptoms-of-varicose-veins-here-are-some-tips-to-help/?$ https://www.avisvascularcentre.com/
+# RedirectMatch 301 ^/thyroid-ablation-for-womens-health/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/thyroid-nodule-ablation-the-future-of-thyroid-care/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/ultimate-guide-to-venaseal-glue-treatment-for-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/risk-assessment-of-varicose-veins-on-traffic-police/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/how-your-it-job-puts-you-at-a-high-risk-of-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/are-your-varicose-veins-affecting-your-sleep/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/skip-surgery-non-invasive-vein-care-that-works/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/do-spider-veins-lead-to-potentially-deadly-blood-clots/?$ https://www.avisvascularcentre.com/
+
+# Tags
+RedirectMatch 301 ^/tag/hereditary-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-and-genetics/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/genetics-and-varicose-veins/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/genetics/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/no-1-varicose-veins-hospital/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-hospital-in-hyderabad/?$ https://www.avisvascularcentre.com/
+RedirectMatch 301 ^/tag/varicose-veins-causes/?$ https://www.avisvascularcentre.com/
+
+RewriteEngine On
+
+RewriteRule ^tag/diabetic-diseases/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www\.)?avisvascularcentre\.com$ [NC]
+RewriteRule ^tag/what-is-the-use-of-clacs-treatment/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+
+
+RedirectMatch 301 ^/tag/deep-vein-thrombosis/?$ https://www.avisvascularcentre.com/
+RewriteRule ^contact/?$ https://avisvascularcentre.com/contact-us/ [R=301,L]
+RewriteRule ^tag/best-hospital-for-varicose-veins/?$ https://avisvascularcentre.com/ [R=301,L]
+RewriteRule ^tag/what-are-artery-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+RewriteRule ^tag/varicose-veins-diet/?$ https://avisvascularcentre.com/8-foods-to-avoid-for-varicose-veins-diet-treatment [R=301,L]
+RewriteRule ^tag/thyroid-ablation-for-womens-health/?$ https://avisvascularcentre.com/thyroid-ablation-treatment [R=301,L]
+
+RewriteEngine On
+
+# Redirect: varicose-veins-hospital-in-india → Homepage
+RewriteRule ^tag/varicose-veins-hospital-in-india/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Redirect: significant-pain → Homepage
+RewriteRule ^tag/significant-pain/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Redirect: risk-assessment-of-varicose-veins → Blood clots page
+RewriteRule ^tag/risk-assessment-of-varicose-veins/?$ https://avisvascularcentre.com/varicose-veins-risk-of-deadly-blood-clots [R=301,L]
+
+# Redirect: varicose-veins → Understanding page
+RewriteRule ^tag/varicose-veins/?$ https://avisvascularcentre.com/understanding-varicose-veins [R=301,L]
+
+
+
+
+# TAG REDIRECTS
+RewriteRule ^tag/varicose-veins-stockings/?$ https://avisvascularcentre.com/do-compression-stockings-really-help-with-varicose-veins [R=301,L]
+
+RewriteRule ^tag/common-causes-for-varicose-veins/?$ https://avisvascularcentre.com/5-common-causes-of-varicose-veins [R=301,L]
+
+RewriteRule ^tag/thyroid-and-women-health/?$ https://avisvascularcentre.com/ablation-therapy-for-thyroid-nodules-womens-health [R=301,L]
+
+RewriteRule ^tag/vein-hospital/?$ https://avisvascularcentre.com/why-choosing-the-right-vein-hospital-matters [R=301,L]
+
+RewriteRule ^tag/varicose-veins-symptoms/?$ https://avisvascularcentre.com/lifestyle-changes-to-overcome-varicose-vein-symptoms [R=301,L]
+
+RewriteRule ^tag/prostate-embolization-treatment/?$ https://avisvascularcentre.com/understanding-prostate-artery-embolization [R=301,L]
+
+RewriteRule ^tag/non-invasive-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/knee-arthritis/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# TEAM MEMBER REDIRECT
+RewriteRule ^team-member/dr-chandru-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# BRANCH URL FIX
+RewriteRule ^branch/Tamil-Nadu/Coimbatore/?$ https://avisvascularcentre.com/tamil-nadu/coimbatore [R=301,L]
+
+
+
+
+# TAG REDIRECTS
+RewriteRule ^tag/pain-free/?$ https://avisvascularcentre.com/embracing-a-pain-free-life [R=301,L]
+
+RewriteRule ^tag/diseases-for-it-persons/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+RewriteRule ^tag/winter-season-diseases/?$ https://avisvascularcentre.com/how-to-care-for-your-varicose-veins-in-the-winters [R=301,L]
+
+RewriteRule ^tag/mens-diseases/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+RewriteRule ^tag/lymphedema-and-vein-connection/?$ https://avisvascularcentre.com/the-hidden-connection-between-veins-and-lymphedema [R=301,L]
+
+RewriteRule ^tag/truths-about-gae/?$ https://avisvascularcentre.com/unveiling-the-truth-about-gae-treatment [R=301,L]
+
+RewriteRule ^tag/diabetes-and-varicose-veins/?$ https://avisvascularcentre.com/diabetes-and-vein-diseases [R=301,L]
+
+RewriteRule ^tag/senior-citizens-diseases/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# HTTP + TAG REDIRECT
+RewriteRule ^tag/uterine-fibroids-treatment/?$ https://avisvascularcentre.com/uterine-fibroid-embolization [R=301,L]
+
+# HOME FIX
+RewriteRule ^home/?$ https://avisvascularcentre.com/ [R=301,L]
+
+
+
+
+# TAG REDIRECTS
+RewriteRule ^tag/women-fibroids/?$ https://avisvascularcentre.com/liberating-women-from-uterine-fibroids [R=301,L]
+
+RewriteRule ^tag/venous-diseases/page/2/?$ https://avisvascularcentre.com/understanding-varicose-veins [R=301,L]
+
+RewriteRule ^tag/spider-veins-leads-to-blood-cloths/?$ https://avisvascularcentre.com/navigating-spider-vein-treatment [R=301,L]
+
+RewriteRule ^tag/varicose-veins-for-women/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/leg-swelling/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/varicose-veins/feed/?$ https://avisvascularcentre.com/understanding-varicose-veins [R=301,L]
+
+# SERVICE / STRUCTURE FIXES
+RewriteRule ^diseases/service/leg-ulcer-management/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^diseases/service/thyroid-nodule-embolization/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^diseases/service/glue-therapy/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+RewriteEngine On
+
+# SERVICE STRUCTURE FIXES
+
+
+RewriteRule ^diseases/service/cryo-laser-and-cryo-sclerotherapy/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+# RewriteRule ^diseases/service/radio-frequency-ablation/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+# BRANCH REDIRECT
+RewriteRule ^branch/Andhra-Pradesh/Visakhapatnam/?$ https://avisvascularcentre.com/andhra-pradesh/visakhapatnam [R=301,L]
+
+# TAG REDIRECTS
+RewriteRule ^tag/prostate-conditions/?$ https://avisvascularcentre.com/prostate-embolization [R=301,L]
+
+RewriteRule ^tag/types-of-leg-ulcers/feed/?$ https://avisvascularcentre.com/types-of-leg-ulces-causes-treatment-and-prevention [R=301,L]
+
+RewriteRule ^tag/varicose-veins-and-heart-diseases/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/chronic-venous-insufficiency/?$ https://avisvascularcentre.com/what-is-chronic-venous-insufficiency [R=301,L]
+
+# SERVICE URL FIX (CASE SENSITIVE ISSUE)
+RewriteRule ^service/Leg-Ulcer-Management/?$ https://avisvascularcentre.com/service/leg-ulcer-management [R=301,L]
+
+# PAGE REDIRECT
+RewriteRule ^thyroid-treatment/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteEngine On
+
+RewriteRule ^diseases/service/lymphedema/?$ https://avisvascularcentre.com/service/lymphedema [R=301,L]
+# FEED TAG REDIRECTS
+RewriteRule ^tag/varicose-eczema-causes/feed/?$ https://avisvascularcentre.com/diseases/varicose-veins [R=301,L]
+
+RewriteRule ^tag/vascular-treatment/feed/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/early-signs-of-dvt/feed/?$ https://avisvascularcentre.com/5-early-signs-of-dvt [R=301,L]
+
+RewriteRule ^tag/lymphedema-causes/feed/?$ https://avisvascularcentre.com/lymphedema-causes-problems-and-treatments [R=301,L]
+
+# TAG PAGE REDIRECTS
+RewriteRule ^tag/types-of-leg-ulcers/?$ https://avisvascularcentre.com/types-of-leg-ulces-causes-treatment-and-prevention [R=301,L]
+
+RewriteRule ^tag/prostate-artery-embolization-in-india/?$ https://avisvascularcentre.com/prostate-artery-embolization-in-india [R=301,L]
+
+RewriteRule ^tag/womens-health/?$ https://avisvascularcentre.com/understanding-fibroids-empowering-womens-health [R=301,L]
+
+RewriteRule ^tag/non-invasive-vein-care/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/thyroid-care-for-wo/?$ https://avisvascularcentre.com/ablation-therapy-for-thyroid-nodules-womens-health [R=301,L]
+
+RewriteRule ^tag/fibroid-treatments/?$ https://avisvascularcentre.com/diseases/uteroine-fibroids [R=301,L]
+
+RewriteEngine On
+
+# TAG REDIRECTS
+RewriteRule ^tag/genetics-on-vein-health/?$ https://avisvascularcentre.com/the-impact-of-genetics-on-vein-health [R=301,L]
+
+RewriteRule ^tag/vascular-diseases-for-women/?$ https://avisvascularcentre.com/liberating-women-from-uterine-fibroids [R=301,L]
+
+RewriteRule ^tag/spider-veins-prevention/?$ https://avisvascularcentre.com/varicose-veins-versus-spider-veins [R=301,L]
+
+RewriteRule ^tag/prostate-embolization/?$ https://avisvascularcentre.com/prostate-embolization [R=301,L]
+
+RewriteRule ^tag/ar-tech/?$ https://avisvascularcentre.com/varicose-veins-treatment-with-ar-technology [R=301,L]
+
+# BRANCH REDIRECTS
+RewriteRule ^branch/Telangana/Hyderabad/?$ https://avisvascularcentre.com/telangana/hyderabad/ [R=301,L]
+
+RewriteRule ^branch/Andhra/?$ https://avisvascularcentre.com/andhra-pradesh/ [R=301,L]
+
+# PAGE REDIRECTS
+RewriteRule ^get-the-exercise-tips-for-limited-mobility/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# CATEGORY REDIRECT
+RewriteRule ^service-category/better-life/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# FILE EXTENSION FIX
+
+
+
+
+# TAG REDIRECTS
+RewriteRule ^tag/vascular-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/early-signs-of-dvt/?$ https://avisvascularcentre.com/5-early-signs-of-dvt [R=301,L]
+
+RewriteRule ^tag/dvt-while-travel/?$ https://avisvascularcentre.com/deep-vein-thrombosis-and-its-health-complications [R=301,L]
+
+RewriteRule ^tag/blood-cloths-in-veins/?$ https://avisvascularcentre.com/the-connection-between-blood-clots-and-varicose-veins [R=301,L]
+
+RewriteRule ^tag/women-vascular-problems/?$ https://avisvascularcentre.com/understanding-fibroids-empowering-womens-health [R=301,L]
+
+RewriteRule ^tag/lymphatic-system-fails/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/myths-about-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# DOCTOR PROFILE REDIRECT
+RewriteRule ^our-doctors/dr-chandrashekar-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# PROJECT PAGE REDIRECT
+RewriteRule ^project-style-1/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+# RewriteRule ^tag/ablation-therapy/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+RewriteRule ^tag/postthrombotic-syndrome/?$ https://avisvascularcentre.com/postthrombotic-syndrome [R=301,L]
+
+RewriteRule ^tag/modern-vein-treatment/?$ https://avisvascularcentre.com/modern-vein-treatments-the-future-of-vascular-care [R=301,L]
+
+RewriteRule ^tag/interplay-between-varicose-veins/?$ https://avisvascularcentre.com/interplay-between-varicose-veins-diabetes-and-ulcers [R=301,L]
+
+RewriteRule ^tag/vein-issues-affect-mental-health/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/weight-gain/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/deciphering-peripheral-artery-disease/?$ https://avisvascularcentre.com/deciphering-peripheral-artery-disease [R=301,L]
+
+RewriteRule ^tag/other-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-advanced-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/clacs-treatment-in-india/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+RewriteRule ^tag/vein-diseases/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# =========================
+# FEED FIXES
+# =========================
+
+RewriteRule ^tag/leg-swelling/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/varicose-veins-for-women/feed/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# =========================
+# DUPLICATE (HTTP/HTTPS) FIX
+# =========================
+
+RewriteRule ^tag/connection-between-blood-cloths-and-varicose-veins/?$ https://avisvascularcentre.com/the-connection-between-blood-clots-and-varicose-veins [R=301,L]
+
+RewriteRule ^tag/varicose-veins-for-women/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# =========================
+# BRANCH REDIRECT
+# =========================
+
+RewriteRule ^branch/Andhra-Pradesh/Vijayawada/?$ https://avisvascularcentre.com/andhra-pradesh/vijayawada [R=301,L]
+
+# =========================
+# CATEGORY / SERVICE FIX
+# =========================
+
+RewriteRule ^service-category/spider-veins/?$ https://avisvascularcentre.com/varicose-veins-versus-spider-veins [R=301,L]
+
+# =========================
+# BLOG PAGE REDIRECT
+# =========================
+
+RewriteRule ^how-to-address-your-deep-vein-problems/?$ https://avisvascularcentre.com/deep-vein-thrombosis-and-its-health-complications [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/gae-treatment-for-osteoarthritis/?$ https://avisvascularcentre.com/gae-innovative-treatment-for-osteoarthritis [R=301,L]
+
+RewriteRule ^tag/varicose-vein-and-genetics/?$ https://avisvascularcentre.com/genetics-and-varicose-veins-is-it-hereditary [R=301,L]
+
+RewriteRule ^tag/fibroids-root-causes/?$ https://avisvascularcentre.com/liberating-women-from-uterine-fibroids [R=301,L]
+
+RewriteRule ^tag/varicose-veins-test/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/what-is-venous-insufficiency/?$ https://avisvascularcentre.com/what-is-chronic-venous-insufficiency [R=301,L]
+
+RewriteRule ^tag/prostate-gland-diseases/?$ https://avisvascularcentre.com/prostate-artery-embolization-in-india [R=301,L]
+
+RewriteRule ^tag/vein-issues/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/varicose-veins-linked-with-infertility/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/best-doctor-for-varicose-veins/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^tag/women-uterined-fibroids/?$ https://avisvascularcentre.com/liberating-women-from-uterine-fibroids [R=301,L]
+
+RewriteRule ^tag/best-treatment-for-thyroid/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/blood-sugar-and-varicose-veins/?$ https://avisvascularcentre.com/diabetes-and-vein-issues-link-complications [R=301,L]
+
+RewriteRule ^tag/weight-gain/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/latest-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/latest-laser-advances-in-varicose-vein-treatment [R=301,L]
+
+RewriteRule ^tag/deciphering-peripheral-artery-disease/?$ https://avisvascularcentre.com/deciphering-peripheral-artery-disease [R=301,L]
+
+# =========================
+# FEED FIXES
+# =========================
+
+RewriteRule ^tag/prostate-conditions/feed/?$ https://avisvascularcentre.com/prostate-embolization [R=301,L]
+
+RewriteRule ^tag/knee-laser-treatment/feed/?$ https://avisvascularcentre.com/effective-knee-arthritis-treatment-without-surgery [R=301,L]
+
+# =========================
+# CATEGORY / PAGE FIX
+# =========================
+
+RewriteRule ^portfolio-category/assistance/?$ https://avisvascularcentre.com/about/ [R=301,L]
+
+RewriteRule ^tag/prostate-symptoms/feed/?$ https://avisvascularcentre.com/understanding-prostate-artery-embolization [R=301,L]
+
+RewriteRule ^tag/thyroid-for-women/feed/?$ https://avisvascularcentre.com/understanding-fibroids-empowering-womens-health [R=301,L]
+
+RewriteRule ^tag/prostate-health-problems/feed/?$ https://avisvascularcentre.com/understanding-prostate-artery-embolization [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/knee-laser-treatment/?$ https://avisvascularcentre.com/effective-knee-arthritis-treatment-without-surgery [R=301,L]
+
+RewriteRule ^tag/thyroid-and-women/?$ https://avisvascularcentre.com/thyroid-nodules-ablation-why-treatment-matters [R=301,L]
+
+RewriteRule ^tag/birth-control-pills-side-effects/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/prostate-symptoms/?$ https://avisvascularcentre.com/prostate-embolization [R=301,L]
+
+RewriteRule ^tag/women-fibroids-treatment/?$ https://avisvascularcentre.com/understanding-fibroids-empowering-womens-health [R=301,L]
+
+RewriteRule ^tag/lymphatic/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/laser-treatment-for-knee-pain/?$ https://avisvascularcentre.com/genicular-artery-embolization-for-knee-pain-relief [R=301,L]
+
+RewriteRule ^tag/thyroid-for-women/?$ https://avisvascularcentre.com/understanding-fibroids-empowering-womens-health [R=301,L]
+
+RewriteRule ^tag/infertility/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+RewriteRule ^tag/ablation-therapy-for-thyroid-nodules/?$ https://avisvascularcentre.com/ablation-therapy-for-thyroid-nodules-womens-health [R=301,L]
+
+RewriteRule ^tag/clacs-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/clacs-treatment [R=301,L]
+
+# =========================
+# PAGE / STRUCTURE FIXES
+# =========================
+
+RewriteRule ^home/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^index\.php$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^is-running-really-good-for-the-heart-2/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/knee-pain-surgery/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/diabetes/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/best-vascular-surgeon/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^tag/womens-are-more-prone-to-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicose-vein-patient-testimonials/?$ https://avisvascularcentre.com/testimonials/ [R=301,L]
+
+RewriteRule ^tag/lymphedema-disease/?$ https://avisvascularcentre.com/lymphedema-causes-problems-and-treatments [R=301,L]
+
+RewriteRule ^tag/varicose-veins-treatment-naturally/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/pulmonary-embolism/?$ https://avisvascularcentre.com/understanding-pulmonary-embolism [R=301,L]
+
+RewriteRule ^tag/knee-laser-surgery/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/thyroid-disesases/?$ https://avisvascularcentre.com/understanding-thyroid-nodules [R=301,L]
+
+RewriteRule ^tag/fibroids-prevention/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/women-health/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/young-ages-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# RewriteRule ^tag/ablation-treatment/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+RewriteRule ^tag/best-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^tag/enlarged-prostate-without-surgery/?$ https://avisvascularcentre.com/treat-enlarged-prostate-without-surgery [R=301,L]
+
+RewriteRule ^tag/cryo-laser-and-cryo-sclerotherapy/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+RewriteRule ^tag/artery-diseases/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# =========================
+# FEED FIXES
+# =========================
+
+RewriteRule ^tag/womens-health/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/prostate-health-problems/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/stockings-for-varicose-veins/?$ https://avisvascularcentre.com/do-compression-stockings-really-help-with-varicose-veins [R=301,L]
+
+RewriteRule ^tag/summer-heatwaves/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/diabetes-affects-the-vascular-system/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/fibroids/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+RewriteRule ^tag/vein-care/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-compression-stockinggs/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/pulmonary-embolism-causes/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/prostate-health-problems/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/what-are-the-latest-varicose-veins-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/knee-pain-laser-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/weight-gain-and-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/varicose-vein-hospital/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# RewriteRule ^tag/ablation-therapy-for-thyroid/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+RewriteRule ^tag/traditional-knee-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-ruptures/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# =========================
+# DOCTOR (FEED + NORMAL)
+# =========================
+
+RewriteRule ^tag/varicose-vein-doctor/feed/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^tag/varicose-vein-doctor/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# =========================
+# CATEGORY / PORTFOLIO FIX
+# =========================
+
+RewriteRule ^portfolio-category/healthcare/?$ https://avisvascularcentre.com/achievements [R=301,L]
+
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/varicose-veins-ruptures/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/pulmonary-embolism-symptoms/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/news/?$ https://avisvascularcentre.com/announcements [R=301,L]
+
+RewriteRule ^tag/genetical-disorders/?$ https://avisvascularcentre.com/announcements [R=301,L]
+
+RewriteRule ^tag/thyroid-treatment/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/compression-stockings/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/glue-based-varicose-vein-treatment/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+RewriteRule ^tag/avis-vascular-center-in-rajahmundry/?$ https://avisvascularcentre.com/andhra-pradesh/rajahmundry [R=301,L]
+
+RewriteRule ^tag/venous-disorders/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/swelling/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/venous-stasis/?$ https://avisvascularcentre.com/venous-stasis-the-condition-and-its-treatment [R=301,L]
+
+# RewriteRule ^tag/laser-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+RewriteRule ^tag/dvt-is-genetic/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/varicose-veins-glue-treatment/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+RewriteRule ^tag/knee-pain-regae-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/diabetes-affects-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/venous-ulcer-wounds/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/diabetics-care/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/venous-stasis-treatment/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/5-things-to-know-about-varicose-veins/?$ https://avisvascularcentre.com/5-essential-things-need-to-know-about-varicose-veins [R=301,L]
+
+# =========================
+# FEED FIX
+# =========================
+
+RewriteRule ^tag/prostate-artery-embolization-in-india/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteEngine On
+
+# =========================
+# PAGE / PORTFOLIO REDIRECTS
+# =========================
+
+RewriteRule ^portfolio/recognized-cardiologists/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^relieve-knee-pain-without-surgery/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/summer-heatwaves-and-vein-health/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/heart-diseases-are-caused-by-heart-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/prostate-artery-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/genicular-arterial-embolization/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/it-job-puts-you-at-a-high-risk-of-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/vein-doctor/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^tag/leg-ulcer-remedies/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+RewriteRule ^tag/weight-gain-issues/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+RewriteRule ^tag/diabetic-foot-ulcers/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/it-jobs/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/dvt-causes/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/uterine-fibroids/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+RewriteRule ^tag/blood-cloths-after-injuries/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/understanding-thyroid-nodule-ablation/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/deadly-blood-cloths/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^news-events-blogs$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments? [R=301,L]
+
+
+RewriteRule ^how-to-care-for-your-varicose-veins-in-the-winters\"?$ https://avisvascularcentre.com/how-to-care-for-your-varicose-veins-in-the-winters [R=301,L]
+# =========================
+# FEED FIX
+# =========================
+
+RewriteRule ^tag/womens-health/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+
+
+# =========================
+# FEED REDIRECTS
+# =========================
+
+RewriteRule ^tag/prostate-artery-embolization-in-india/feed/?$ https://avisvascularcentre.com/prostate-embolization [R=301,L]
+
+RewriteRule ^tag/venous-ulcer-wounds/feed/?$ https://avisvascularcentre.com/caring-for-venous-ulcer-wounds [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/varicose-veins-creams/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/explore-clacs/?$ https://avisvascularcentre.com/clacs-treatment-in-india-for-vein-disorders [R=301,L]
+
+# RewriteRule ^tag/modern-varicose-veins-treatment/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+RewriteRule ^tag/non-surgical-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/glue-closure-non-surgical-varicose-vein-treatment [R=301,L]
+
+RewriteRule ^tag/vascular-surgeon/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-blood-cloths/?$ https://avisvascularcentre.com/understanding-blood-clots-after-leg-injuries [R=301,L]
+
+RewriteRule ^tag/knee-pain-treatment-without-surgery/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/what-is-spider-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/varicose-veins-diagnosis/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/knee-arthritis-treatment/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/avis-vascular-centre/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-treatment-options/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-diabetes-and-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/fibroids-removal-without-uterus-removal/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/lymphatic-system/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/types-of-lymphedema/?$ https://avisvascularcentre.com/lymphedema-causes-problems-and-treatments [R=301,L]
+
+RewriteRule ^tag/real-facts-on-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+RewriteRule ^tag/thyroid-nodules-treatments/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/varicose-ruptures/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# =========================
+# PORTFOLIO REDIRECT
+# =========================
+
+RewriteRule ^portfolio-category/doctors/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+
+
+# =========================
+# FEED REDIRECTS
+# =========================
+
+RewriteRule ^tag/venous-ulcer-wounds/feed/?$ https://avisvascularcentre.com/caring-for-venous-ulcer-wounds [R=301,L]
+
+RewriteRule ^tag/blood-cloths-in-veins/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/thyroid-treatment/feed/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/what-is-spider-veins/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/vascular-diseases-for-women/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/endovenous-laser-therapy/?$ https://avisvascularcentre.com/service/endovenous-laser-ablation-evla [R=301,L]
+
+RewriteRule ^tag/vascular-diseases/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+RewriteRule ^tag/thyroid-nodule-ablation/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/venous-ulcers/?$ https://avisvascularcentre.com/diseases/leg-ulcers [R=301,L]
+
+RewriteRule ^tag/womens-health/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteRule ^tag/vascular-diseases-for-women/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/weight-gain-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicose-pains/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/traffic-police-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/laser-fibroid-treatment/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+RewriteRule ^tag/fibroid-embolization/?$ https://avisvascularcentre.com/diseases/uteroine-fibroids [R=301,L]
+
+RewriteRule ^tag/varicose-veins-diseases-for-seniors/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# =========================
+# FILE / PDF REDIRECT
+# =========================
+
+RewriteRule ^wp-content/uploads/2025/01/AVIS-BROUCHURE-2025-JUNE\.pdf$ https://avisvascularcentre.com/ [R=301,L]
+
+
+RewriteEngine On
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/varicose-veins-diseases-for-seniors/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/patient-testimonial-on-varicose-veins/?$ https://avisvascularcentre.com/testimonials/ [R=301,L]
+
+RewriteRule ^tag/venous-ulcer-wounds/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicocele-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/diabetes-and-vein-diseases/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/venous-ulcers-complications/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/prevention-of-deep-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/understanding-thyroid-nodules/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicose-vein-ruptures/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-affecting-the-sleep/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/prostate-artery-embolization-in-india/?$ https://avisvascularcentre.com/prostate-artery-embolization-in-india [R=301,L]
+
+RewriteRule ^tag/diabetes-and-varicose-veins-connection/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/avis-vascular-centres/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# =========================
+# FEED REDIRECTS
+# =========================
+
+RewriteRule ^tag/minimally-invasive-options/feed/?$ https://avisvascularcentre.com/minimally-invasive-options-for-treating-venous-leg-ulcers [R=301,L]
+
+RewriteRule ^tag/fibroid-treatments/feed/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+RewriteRule ^tag/thyroid-care-for-wo/feed/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/thyroid-treatment/feed/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/myths-about-varicose-veins/feed/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# =========================
+# PAGE / STRUCTURE FIXES
+# =========================
+
+RewriteRule ^project-style-2/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^blog/venous-leg-ulcer-in-telugu/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^team-member/dr-chandru-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+
+
+# =========================
+# TAG REDIRECTS
+# =========================
+
+RewriteRule ^tag/is-deep-vein-thrombosis-is-genetic/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/women-health-problems/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/varicose-veins-natural-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/before-and-after/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/beyond-the-surface/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/prevention-of-embolism/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/minimally-invasive-options/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/thyroid-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/thyroid-ablation-for-women/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/weight-gains-and-varicose-veins-link/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+RewriteRule ^tag/spider-vein-causes/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/understanding-venous-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteRule ^tag/top-varicose-veins-hospital/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^tag/laser-treatment-for-throid/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+RewriteRule ^tag/colour-doppler-scan-for-varicose-veins/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+RewriteRule ^tag/sugar-and-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# =========================
+# PAGE / STRUCTURE FIXES
+# =========================
+
+RewriteRule ^best-/?$ https://avisvascularcentre.com/ [R=301,L]
+
+RewriteRule ^team-member/dr-chandru-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^our-doctors/dr-chandrashekar-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+RewriteRule ^comments/feed/?$ https://avisvascularcentre.com/ [R=301,L]
+
+
+
+# Tags → Correct Pages
+RewriteRule ^tag/blood-clots-and-peripheral-artery-disease/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+RewriteRule ^tag/varicose-vein-care-for-diabetics/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+RewriteRule ^tag/failure-of-lymphatic-system/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+RewriteRule ^tag/diabetic-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^tag/venous-dermatitis/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^tag/varicose-disorders/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Fibroid related
+RewriteRule ^tag/fibroid-treatments/feed/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+RewriteRule ^tag/fibroid-treatments/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+# Venous insufficiency
+RewriteRule ^tag/what-is-venous-insufficiency/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Brand / homepage
+RewriteRule ^tag/avis-vascular-center/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Blog URLs
+RewriteRule ^are-varicose-veins-causing-your-rls/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^does-exercise-really-help-to-reduce-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# PAD
+RewriteRule ^tag/peripheral-artery-disease/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Diabetes related
+RewriteRule ^tag/varicose-veins-and-diabetes/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Leg ulcer
+RewriteRule ^tag/leg-ulcer-causes/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Doctors
+RewriteRule ^tag/doctors/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# WP JSON → homepage
+RewriteRule ^wp-json/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Treatments
+RewriteRule ^tag/modern-vein-treatments/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Post thrombotic
+RewriteRule ^tag/post-thrombotic-syndrome-2/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+
+# What is CLACS
+RewriteRule ^tag/what-is-clacs/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous ulcers treatments
+RewriteRule ^tag/venous-ulcers-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Doctors testing
+RewriteRule ^doctors-testing/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Remedies for varicose veins
+RewriteRule ^tag/remedies-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# Genicular artery embolization
+RewriteRule ^tag/genicular-artery-embolization/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Non-invasive treatment
+RewriteRule ^tag/non-invasive-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# COVID legs blog
+RewriteRule ^how-does-covid-19-impact-the-health-of-your-legs/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Post thrombotic treatment
+RewriteRule ^tag/postthrombotic-syndrome-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Artery disease (HTTP handled automatically)
+RewriteRule ^tag/artery-disease/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Women's fibroids
+RewriteRule ^tag/womens-fibroids/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Osteoarthritis
+RewriteRule ^tag/osteoarthritis-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# CLACS treatment
+RewriteRule ^tag/what-is-clacs-treatment/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Causes of varicose veins
+RewriteRule ^tag/causes-of-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Portfolio page
+RewriteRule ^portfolio/24-7-monitoring-and-care/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Sclerotherapy
+RewriteRule ^tag/sclerotherapy/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Blood clots
+RewriteRule ^tag/blood-clots/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Varicose eczema
+RewriteRule ^tag/varicose-eczema-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Pulmonary embolism
+RewriteRule ^tag/treatment-for-pulmonary-embolism/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Knee pain
+RewriteRule ^tag/knee-pain-relief/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# DVT prevention
+RewriteRule ^tag/prevention-of-dvt/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+
+# Medical glue treatment
+RewriteRule ^tag/medical-glue-treatment/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Thyroid ablation
+RewriteRule ^tag/thyroid-ablation-treatment/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+# Knee pain
+RewriteRule ^tag/knee-pain/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Varicocele
+RewriteRule ^tag/varicocele-treatment-in-india/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Diabetes + veins
+RewriteRule ^tag/diabetes-and-vein-issues/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Prostate gland
+RewriteRule ^tag/prostate-gland/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Men's problems
+RewriteRule ^tag/mens-problems/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Spider vein treatment
+RewriteRule ^tag/spider-vein-treatment/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+# Birth control pills
+RewriteRule ^tag/birth-control-pills-and-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Homepage duplicate
+RewriteRule ^homepage-1/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Lymphedema
+RewriteRule ^tag/lymphedema-treatments/?$ https://avisvascularcentre.com/service/lymphedema [R=301,L]
+
+# DVT causes
+RewriteRule ^tag/causes-of-dvt/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Sclerotherapy
+RewriteRule ^tag/sclerotherapy-treatment/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Doctors
+RewriteRule ^tag/doctor-for-varicose-veins/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Blood clots feed
+RewriteRule ^tag/blood-cloths-in-veins/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Non-invasive vein care (feed)
+RewriteRule ^tag/non-invasive-vein-care/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Non-invasive vein care (page)
+RewriteRule ^tag/non-invasive-vein-care/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Portfolio category
+RewriteRule ^portfolio-category/treatment/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Spider veins feed
+RewriteRule ^tag/what-is-spider-veins/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Vein stripping
+RewriteRule ^tag/vein-stripping/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Genetics on vein health (feed)
+RewriteRule ^tag/genetics-on-vein-health/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Genetics on vein health (page)
+RewriteRule ^tag/genetics-on-vein-health/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Legs pain
+RewriteRule ^tag/legs-pain/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# DVT and cancer
+RewriteRule ^tag/dvt-and-cancer/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Healthy people DVT
+RewriteRule ^tag/healthy-people-sometimes-get-dvt/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Thyroid care (feed)
+RewriteRule ^tag/thyroid-care-for-wo/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Thyroid care (page)
+RewriteRule ^tag/thyroid-care-for-wo/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Blood clots & vein care
+RewriteRule ^tag/blood-cloths-and-vein-care/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Lymphedema
+RewriteRule ^tag/lymphedema/?$ https://avisvascularcentre.com/diseases/lymphedema [R=301,L]
+
+# DVT while travel (feed)
+RewriteRule ^tag/dvt-while-travel/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Team member doctor
+RewriteRule ^team-member/dr-chandru-reddy/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Varicose wounds (feed)
+RewriteRule ^tag/varicose-wounds/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Leg ulcer symptoms
+RewriteRule ^tag/leg-ulcer-symptoms/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Myths about varicose veins (feed)
+RewriteRule ^tag/myths-about-varicose-veins/feed/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Diabetics
+RewriteRule ^tag/diabetics/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Blood clots due to varicose veins
+RewriteRule ^tag/blood-cloths-due-to-varicose-veins/?$ https://avisvascularcentre.com/varicose-veins-risk-of-deadly-blood-clots [R=301,L]
+
+# Colour Doppler
+RewriteRule ^tag/colour-doppler-scan/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# GAE
+RewriteRule ^tag/gae/?$ https://avisvascularcentre.com/unveiling-the-truth-about-gae-treatment [R=301,L]
+
+# Thyroid nodules
+RewriteRule ^tag/thyroid-nodules/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Vein issues (feed)
+RewriteRule ^tag/vein-issues/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Vein issues (page)
+RewriteRule ^tag/vein-issues/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Varicose wounds (feed)
+RewriteRule ^tag/varicose-wounds/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Varicose wounds (page)
+RewriteRule ^tag/varicose-wounds/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Hair removal
+RewriteRule ^tag/varicose-veins-and-hair-removal/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Venous leg ulcers
+RewriteRule ^tag/venous-leg-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Varicose treatment
+RewriteRule ^tag/varicose-treatment/?$ https://avisvascularcentre.com/diseases/varicose-veins [R=301,L]
+
+# Service category
+RewriteRule ^service-category/better-life/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Thyroid blog
+RewriteRule ^thyroid-and-womens-health-what-you-should-know/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# CLACS treatment
+RewriteRule ^tag/clacs-treatment/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+# Diabetes leg ulcers
+RewriteRule ^tag/diabetes-leg-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Blood clots varicose
+RewriteRule ^tag/varicose-veins-and-blood-cloths/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Varicose vs spider veins
+RewriteRule ^tag/varicose-veins-vs-spider-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Permanent treatment
+RewriteRule ^tag/varicose-vein-treatment-permanent/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Hospital homepage
+RewriteRule ^tag/hospital-for-varicose-veins/?$ https://avisvascularcentre.com/ [R=301,L]
+
+
+# Varicose veins treatment (typo URL)
+RewriteRule ^tag/variocose-veins-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Rajahmundry feed
+RewriteRule ^tag/avis-vascular-center-in-rajahmundry/feed/?$ https://avisvascularcentre.com/andhra-pradesh/rajahmundry [R=301,L]
+
+# Vein pain
+RewriteRule ^tag/vein-pain/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Prostate diseases
+RewriteRule ^tag/prostate-diseases/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# GAE treatment
+RewriteRule ^tag/gae-treatment-in-india/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Thromboembolism prevention
+RewriteRule ^tag/prevention-for-thromboembolism/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# Thyroid ablation
+# RewriteRule ^tag/thyroid-ablation/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+# Thyroid nodules info
+RewriteRule ^tag/what-is-thyroid-nodules/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Pain relief
+RewriteRule ^tag/pain-relief/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Best hospital
+RewriteRule ^tag/best-varicose-veins-hospital/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Before & after
+RewriteRule ^tag/before-and-after-varicose-vein-treatment/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Venous ulcers causes
+RewriteRule ^tag/venous-ulcers-causes/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Patient stories
+RewriteRule ^category/patients-stories/?$ https://avisvascularcentre.com/testimonials/ [R=301,L]
+
+# Fibroids issues
+RewriteRule ^tag/fibroids-and-issues/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Advanced fibroid
+RewriteRule ^tag/advanced-fibroid-treatment/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+# Leg ulcer treatment
+RewriteRule ^tag/leg-ulcer-treatment/?$ https://avisvascularcentre.com/service/leg-ulcer-management [R=301,L]
+
+# AR tech feed
+RewriteRule ^tag/ar-tech/feed/?$ https://avisvascularcentre.com/varicose-veins-treatment-with-ar-technology [R=301,L]
+
+# Varicose hospital feed
+RewriteRule ^tag/varicose-vein-hospital/feed/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Spider veins symptoms feed
+RewriteRule ^tag/spider-veins-symptoms/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Thromboembolism (typo)
+RewriteRule ^tag/thrombosembolism/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+
+# --- FIX DIRECT 404 URLs ---
+
+# /treatments → service
+RewriteRule ^treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Missing PDF → homepage (or update if correct file exists)
+RewriteRule ^wp-content/uploads/2025/01/AVIS-BROUCHURE-2024-28-09\.pdf$ https://avisvascularcentre.com/ [R=301,L]
+
+# --- TAG REDIRECTS ---
+
+# Rajahmundry
+RewriteRule ^tag/avis-vascular-center-in-rajahmundry/feed/?$ https://avisvascularcentre.com/andhra-pradesh/rajahmundry [R=301,L]
+RewriteRule ^tag/avis-vascular-center-in-rajahmundry/?$ https://avisvascularcentre.com/andhra-pradesh/rajahmundry [R=301,L]
+
+# Varicose treatment
+RewriteRule ^tag/varicose-vein-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+RewriteRule ^tag/treatment-for-varicose-veins/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# CLACS
+RewriteRule ^tag/clacs/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+# Varicocele + varicose
+RewriteRule ^tag/varicocele-varicose-veins-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Varicose explained
+RewriteRule ^tag/varicose-veins-explained/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Thyroid
+RewriteRule ^tag/what-is-thyroid-ablation/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Blood clots (typo fixed)
+RewriteRule ^tag/signs-of-blood-cloths/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous statis (typo)
+RewriteRule ^tag/venous-statis/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Reback varicose
+RewriteRule ^tag/reback-of-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^tag/reback-of-varicose-veins/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous stasis
+RewriteRule ^tag/venous-stasis-treatment/feed/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Varicose hospital feed
+RewriteRule ^tag/varicose-vein-hospital/feed/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# AR Tech
+RewriteRule ^tag/ar-tech/feed/?$ https://avisvascularcentre.com/varicose-veins-treatment-with-ar-technology [R=301,L]
+
+# --- CATEGORY / PORTFOLIO ---
+
+RewriteRule ^portfolio-category/assistance/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Service category
+RewriteRule ^service-category/cardiac/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Link between ulcers & diabetes
+RewriteRule ^tag/link-between-leg-ulcers-and-diabetes/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# AR Tech
+RewriteRule ^tag/ar-tech/?$ https://avisvascularcentre.com/varicose-veins-treatment-with-ar-technology [R=301,L]
+
+# Varicose vein hospital
+RewriteRule ^tag/varicose-vein-hospital/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Venous stasis
+RewriteRule ^tag/venous-stasis-treatment/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Lymphedema problems
+RewriteRule ^tag/lymphedema-problems/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Painless treatment
+RewriteRule ^tag/painless-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Varicose eczema
+RewriteRule ^tag/varicose-eczema/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Tingling legs + venous diseases
+RewriteRule ^tag/venous-diseases-and-tingling-legs/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Natural treatment
+RewriteRule ^tag/natural-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# Vein ruptures
+RewriteRule ^tag/vein-ruptures/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# About page fix
+RewriteRule ^about-us/?$ https://avisvascularcentre.com/about/ [R=301,L]
+
+# Thyroid nodules
+RewriteRule ^tag/thyroid-nodules-treatment/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+# DVT treatment (typo handled)
+RewriteRule ^tag/dvt-treatment/?$ https://avisvascularcentre.com/diseases/deep-vein-thrombosys [R=301,L]
+
+# Prostate embolization (mapped)
+RewriteRule ^tag/prostate-embolization/?$ https://avisvascularcentre.com/service/thyroid-nodule-embolization [R=301,L]
+
+# Tingling legs
+RewriteRule ^tag/tingling-legs/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# VenaSeal glue
+RewriteRule ^tag/venaseal-glue-treatment/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+# Spider veins causes
+RewriteRule ^tag/spider-veins-causes/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Cream for varicose
+RewriteRule ^tag/cream-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Leg injuries
+RewriteRule ^tag/leg-injuries/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Vein treatment
+RewriteRule ^tag/vein-treatment/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Blog → FAQs/Myths
+RewriteRule ^7-reasons-why-seniors-should-seek-varicose-veins-treatment/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Lymphedema
+RewriteRule ^tag/what-is-lymphedema/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Non-surgical treatment
+RewriteRule ^tag/non-surgical-varicose-vein-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# RLS → homepage
+RewriteRule ^tag/rls/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Traffic police article
+RewriteRule ^tag/varicose-veins-on-traffic-police/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Pulmonary embolism (feed)
+RewriteRule ^tag/pulmonary-embolism-causes/feed/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Pulmonary embolism (page)
+RewriteRule ^tag/pulmonary-embolism-causes/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Serena Williams article
+RewriteRule ^tag/serena-williams/?$ https://avisvascularcentre.com/serena-williams-and-her-experience-with-pulmonary-embolism-2 [R=301,L]
+
+# Medical glue
+RewriteRule ^tag/medical-glue-therapy/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Superficial reflux
+RewriteRule ^tag/superficial-venous-reflux/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# DVT symptoms
+RewriteRule ^tag/dvt-symptoms/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Summer health
+RewriteRule ^tag/summer-health/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Glue therapy
+RewriteRule ^tag/glue-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+# Hospital → homepage
+RewriteRule ^tag/hospital/?$ https://avisvascularcentre.com/ [R=301,L]
+
+# Blood clots
+RewriteRule ^tag/blood-cloths-and-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^tag/varicose-veins-and-deadly-blood-cloths/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Specific article
+RewriteRule ^tag/six-things-to-know-about-varicose-veins/?$ https://avisvascularcentre.com/six-things-to-know-about-varicose-veins [R=301,L]
+
+# Heart problem article
+RewriteRule ^do-varicose-veins-indicated-heart-problems/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# RFA treatment
+# RewriteRule ^tag/radio-frequency-ablation-for-varicose-veins/?$ https://avisvascularcentre.com/service/radio-frequency-ablation [R=301,L]
+
+# Misconceptions article
+RewriteRule ^a-look-at-the-common-misconceptions-surrounding-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+
+
+# Thromboembolism
+RewriteRule ^tag/thromboembolism/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Varicose & heart
+RewriteRule ^tag/is-varicose-veins-related-to-heart-diseases/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous disease
+RewriteRule ^tag/venous-disease/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Facts about varicose veins
+RewriteRule ^tag/facts-about-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Vein pain article
+RewriteRule ^vein-pain-what-your-legs-are-trying-to-tell-you/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Venous ulcers options
+RewriteRule ^tag/invasive-options-for-treating-venous-leg-ulcers/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Varicose treatment
+RewriteRule ^tag/varicose-veins-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Spider veins athletes
+RewriteRule ^tag/spider-veins-in-athletes/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Lymphedema symptoms
+RewriteRule ^tag/lymphedema-symptoms/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Thyroid disease
+RewriteRule ^tag/thyroid-disease/?$ https://avisvascularcentre.com/diseases/ [R=301,L]
+
+# Vein doctors
+RewriteRule ^tag/vein-doctors/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Treatment comparison
+RewriteRule ^tag/endovenous-treatment-vs-vein-stripping/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Glue treatment
+RewriteRule ^tag/glue-treatment/?$ https://avisvascularcentre.com/service/glue-therapy [R=301,L]
+
+# Laser treatment page
+RewriteRule ^laser-treatment-for-varicose-veins/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Varicocele
+RewriteRule ^tag/varicoceles-treatment/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Spider veins service page
+RewriteRule ^service/spider-veins-treatment/?$ https://avisvascularcentre.com/service/cryo-laser-and-cryo-sclerotherapy [R=301,L]
+
+# Edema
+RewriteRule ^tag/edema/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Varicose treatments
+RewriteRule ^tag/varicose-veins-treatments/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Leg ulcers
+RewriteRule ^tag/leg-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Hair removal article
+RewriteRule ^varicose-veins-and-hair-removal/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+RewriteEngine On
+
+# FAQs & Myths category
+RewriteRule ^category/faqs-and-myths/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# EVLA page
+RewriteRule ^endovenous-laser-ablation-for-varicose-veins/?$ https://avisvascularcentre.com/service/endovenous-laser-ablation-evla [R=301,L]
+
+# DVT warning signs
+RewriteRule ^tag/warning-signs-of-deep-vein-thrombosis/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Prostate embolization (feed)
+RewriteRule ^tag/prostate-embolization/feed/?$ https://avisvascularcentre.com/understanding-prostate-artery-embolization [R=301,L]
+
+# Edema legs
+RewriteRule ^tag/edema-legs/?$ https://avisvascularcentre.com/understanding-edema-in-the-legs [R=301,L]
+
+# Ablation therapy (feed + page)
+RewriteRule ^tag/ablation-therapy/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+RewriteRule ^tag/ablation-therapy/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Fibroid treatment
+RewriteRule ^tag/fibroid-treatment/?$ https://avisvascularcentre.com/service/fibroids-treatment [R=301,L]
+
+# Doctors
+RewriteRule ^tag/best-vascular-doctor/?$ https://avisvascularcentre.com/our-doctors/ [R=301,L]
+
+# Prevention tips
+RewriteRule ^tag/best-tips-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/prevention-tips [R=301,L]
+
+# Pagination URL
+RewriteRule ^tag/varicose-veins-treatment/page/2/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# EVLT feed
+RewriteRule ^tag/varicose-vein-treatment-with-evlt/feed/?$ https://avisvascularcentre.com/service/endovenous-laser-ablation-evla [R=301,L]
+
+# Serena article
+RewriteRule ^tag/serena-williams-and-her-experience-with-pulmonary-embolism/?$ https://avisvascularcentre.com/serena-williams-and-her-experience-with-pulmonary-embolism-2 [R=301,L]
+
+# Myths (feed + page)
+RewriteRule ^tag/myths-of-varicose-veins/feed/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+RewriteRule ^tag/myths-of-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Chronic venous
+RewriteRule ^tag/chronic-venous/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Trust article
+RewriteRule ^5-reasons-to-trust-avis-hospitals-for-varicose-vein-treatments/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Venous thromboembolism
+RewriteRule ^tag/venous-thromboembolism/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous insufficiency ulcers
+RewriteRule ^tag/venous-insufficiency-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Pain Management (case fix)
+RewriteRule ^service/Pain-Management/?$ https://avisvascularcentre.com/service/ [R=301,L]
+
+# Women article
+RewriteRule ^women-are-more-likely-to-develop-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Doctor article
+RewriteRule ^what-type-of-doctor-will-treat-my-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Thyroid ablation (feed + page)
+RewriteRule ^tag/ablation-therapy-for-thyroid/feed/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+RewriteRule ^tag/ablation-therapy-for-thyroid/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Foods
+RewriteRule ^tag/foods-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/ [R=301,L]
+
+# Doppler scan
+RewriteRule ^colour-doppler-ultrasound-scan-for-varicose-veins/?$ https://avisvascularcentre.com/blog-categories/diagnosis-treatments [R=301,L]
+
+# Myths article
+RewriteRule ^4-common-myths-about-varicose-vein-treatment/?$ https://avisvascularcentre.com/blog-categories/faqs-myths [R=301,L]
+
+# Restless legs
+RewriteRule ^tag/varicose-veins-and-restless-legs/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+RewriteEngine On
+
+# EVLT vs stripping
+RewriteRule ^endovenous-laser-treatment-vs-vein-stripping/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Venous skin ulcers
+RewriteRule ^tag/venous-skin-ulcers/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# Fibroids (feed)
+RewriteRule ^tag/women-uterined-fibroids/feed/?$ https://avisvascularcentre.com/blog-categories/vascular-diseases [R=301,L]
+
+# News feed (both www & non-www handled)
+RewriteRule ^tag/news/feed/?$ https://avisvascularcentre.com/announcements [R=301,L]
+
+# Post-thrombotic syndrome (feed)
+RewriteRule ^tag/postthrombotic-syndrome/feed/?$ https://avisvascularcentre.com/blog-categories
+
+# Fix cPanel path URLs
+RewriteCond %{THE_REQUEST} \s/+home/ph1f5q6rbwdw/public_html/(.*) [NC]
+RewriteRule ^home/ph1f5q6rbwdw/public_html/(.*)$ https://avisvascularcentre.com/$1 [R=301,L]
+Redirect 301 /wp-admin/admin-ajax.php https://avisvascularcentre.com/
+
+# Remove all query parameters
+RewriteCond %{QUERY_STRING} .+
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+
+
+# Enable Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Images
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    # CSS & JS
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|css|js|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+</IfModule>

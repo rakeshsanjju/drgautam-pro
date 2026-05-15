@@ -1,63 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facility - Dr Gautam Dendukuri</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Facilities - Dr Gautam Dendukuri</title>
+  <style>
+    /* ---------- Base Styles ---------- */
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #000; /* Full black background */
+      color: #fff; /* White text */
+      line-height: 1.7;
+    }
+
+    /* ---------- Page Header Section ---------- */
+    .page-header {
+      background: linear-gradient(135deg, #0a3d62, #1f5f8b);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* ---------- Main Content ---------- */
+    main {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .facility-section {
+      background: #111; /* Black card background */
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .facility-section p {
+      font-size: 1.05rem;
+      color: #ddd; /* Light grey for better readability */
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* ---------- Image Card ---------- */
+    .image-card {
+      margin-top: 40px;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #333;
+    }
+
+    .image-card .caption {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .image-card .caption h3 {
+      margin: 0;
+      color: #00B4D8;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .image-card .caption p {
+      margin: 0;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 50px 15px;
+      }
+
+      .page-header h1 {
+        font-size: 1.9rem;
+      }
+
+      main {
+        padding: 40px 15px;
+      }
+
+      .facility-section {
+        padding: 25px 18px;
+      }
+
+      .image-card .caption h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* ---------- Appointment Section (Dark Theme) ---------- */
+    .page-header {
+      background: linear-gradient(135deg, #2E86C1, #1f5f8b);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .page-header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .appointment-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .appointment-info,
+    .contact-form {
+      background: #111;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .appointment-info h2,
+    .contact-form h3 {
+      color: #00B4D8;
+      margin-top: 0;
+    }
+
+    .info-item {
+      background: #0a3d62;
+      border-left: 4px solid #00B4D8;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #ddd;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 12px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #000;
+      color: #fff;
+    }
+
+    button.submit-button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 15px;
+      background: #00B4D8;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.submit-button:hover {
+      background: #0091b2;
+    }
+
+    /* Loading state */
+    button.submit-button:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+
+    .loading-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .appointment-container {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+      header {
+    background-color: #2E86C1;
+    color: white;
+    padding: 20px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links li {
+    display: inline;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 8px 0;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* Mobile: keep logo and hamburger side by side, stack menu below */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      background-color: #2E86C1;
+      order: 3;
+      align-items: center;
+    }
+
+    .nav-links.show {
+      max-height: 500px; /* enough to show all menu items */
+    }
+
+    .nav-links li {
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-links a {
+      text-align: center;
+      width: 100%;
+    }
+  }
+   footer {
+    background-color: #2E86C1;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-section h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  /* removed icon styles */
+
+  .footer-section p {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 20px 15px;
+    }
+
+    .footer-section {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-section:last-child {
+      border-bottom: none;
+    }
+
+    .footer-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    /* removed icon styles */
+
+    .footer-section p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-section a {
+      font-size: 0.9rem;
+      margin: 2px 0;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom p {
+      margin: 3px 0;
+    }
+  }
+  </style>
 </head>
+
 <body>
+  
+   <header>
+  <nav>
+    <div class="logo">Dr Gautam Dendukuri</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="facility.html">Facility</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- This is where the header will be inserted -->
-    <div id="header-container"></div>
+  <!-- Page Top Heading -->
+  <section class="page-header">
+    <h1>Our Facilities</h1>
+  </section>
 
-    <!-- Your page content here -->
-    <main>
-        <h1>Page Content Goes Here</h1>
-    </main>
+  <!-- Main Content -->
+  <main>
+    <div class="facility-section">
+      <p>
+        Avis Hospital is a multispeciality hospital located in Jubilee Hills, in the heart of Hyderabad.
+        With state-of-the-art facilities in the OPD and consultation area, your privacy and confidentiality are fully
+        assured.
+        The operating theatre complex is equipped with the most up-to-date technology and instruments
+        to handle complex surgeries efficiently and safely.
+      </p>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
+      <p>
+        With a team of superspecialists available in all aspects of face, head, and neck care —
+        including Maxillofacial Surgeon, Plastic Surgeon, Head and Neck Surgeon, ENT Surgeon,
+        Oculoplastic Surgeon, Neurosurgeon, and Interventional Radiologist —
+        it is possible to provide end-to-end care of the highest standards to patients
+        with any kind of facial disorders, which we have successfully carried out over many years.
+      </p>
 
-    <!-- JavaScript to include header and footer -->
-    <script>
-        fetch("header.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Header failed to load");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("header-container").innerHTML = data;
-                // Bind hamburger toggle after header is injected
-                const toggleBtn = document.getElementById('menuToggle');
-                const navLinks = document.getElementById('navLinks');
-                if (toggleBtn && navLinks) {
-                    toggleBtn.addEventListener('click', () => {
-                        navLinks.classList.toggle('show');
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Error loading header:", error);
-            });
+      <!-- Image Card -->
+      <div class="image-card">
+        <img src="./resources/assets/Screenshot 2025-10-15 103300.png" alt="Avis Hospital Facility - Operation Theatre">
+        <img src="./resources/assets/AVI03107.JPG" alt="Avis Hospital Facility - Consultation Room">
+        <img src="./resources/assets/AVI03124.JPG" alt="Avis Hospital Facility - Operation Theatre">
+        <img src="./resources/assets/AVI03131.JPG" alt="Avis Hospital Facility - Consultation Room">
+      </div>
+    </div>
+  </main>
 
-        // Load footer
-        fetch("footer.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Footer failed to load");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("footer-container").innerHTML = data;
-            })
-            .catch(error => {
-                console.error("Error loading footer:", error);
-            });
-    </script>
+  <!-- Footer -->
+ <footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Dr. Gautam Dendukuri</h3>
+      <p>Oral And MaxilloFacial Surgeon</p>
+      
+    </div>
 
+    <div class="footer-section">
+      <h3>Hospital Address</h3>
+      <p><strong>Avis Hospital</strong></p>
+      <p>Jublieehills, Hyderabad</p>
+      <p>Telangana 500034, India</p>
+      <p><strong>Phone:</strong> +91 9866208613</p>
+      <p><strong>Email:</strong> drgautamd@gmail.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="facility.html">Facility</a>
+      <a href="appointment.html">Book Appointment</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Clinic Hours</h3>
+      <p><strong>Monday - Saturday:</strong></p>
+      <p>9:00 AM - 2:00 PM</p>
+      <p><strong>Sunday:</strong></p>
+      <p>Closed</p>
+      <!-- <p style="margin-top: 15px;"><em>Emergency cases available 24/7</em></p> -->
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Dr. Gautam Dendukuri - Oral And MaxilloFacial Surgeon</p>
+    <p>All Rights Reserved</p>
+  </div>
+</footer>
 </body>
 </html>
