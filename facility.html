@@ -547,5 +547,60 @@
     <p>All Rights Reserved</p>
   </div>
 </footer>
+
+  <script>
+    fetch("header.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Header failed to load");
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("header-container").innerHTML = data;
+        const toggleBtn = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (toggleBtn && navLinks) {
+          toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+          });
+        }
+      })
+      .catch(error => {
+        console.error("Error loading header:", error);
+      });
+
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyk726o5K_Hj0Gotx3oP5ljRyBOSq3weRAcrnk2KGQ3FmMeCqcJ_z1u5XB8iQSWZHjE/exec";
+
+    document.getElementById("appointmentForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.innerHTML = '<span class="loading-content"><span class="spinner"></span><span>Please wait...</span></span>';
+      const formData = new FormData(form);
+      const payload = new URLSearchParams(formData);
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: payload.toString()
+        });
+        alert("✅ Thank you! Your appointment has been submitted successfully. We will contact you shortly.");
+        form.reset();
+      } catch (error) {
+        alert("❌ Submission failed. Please try again later or contact us directly.");
+        console.error(error);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-busy');
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    });
+  </script>
 </body>
 </html>
